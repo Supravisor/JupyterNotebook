@@ -12,3 +12,7 @@ h1 {
 #buttons, #preview {
   width: 38vw;
 }
+
+#preview {
+  height: 70vh;
+}
