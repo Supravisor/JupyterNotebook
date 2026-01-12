@@ -22,3 +22,7 @@ h1 {
 td {
   vertical-align: top;
 }
+
+#empty {
+  width: 45vw;
+}
