@@ -8,3 +8,7 @@ h1 {
   font-family: Corbel;
   text-align: center;
 }
+
+#buttons, #preview {
+  width: 38vw;
+}
