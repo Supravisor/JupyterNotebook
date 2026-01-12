@@ -13,6 +13,33 @@
 
   <h1>Jupyter Notebook console</h1>  
 
+  <form name="editor">
+    <table>
+      <tbody>
+        <tr>
+
+          <td id="buttons">
+<div>
+
+  <h2>Import modules</h2>
+
+  <p>
+    <input type="button" class="btn btn-module" value="numpy" onclick="document.editor.textbox.value+='import numpy as np\n'" />
+  </p>
+  
+
+</div>
+          </td>
+
+          <td id="textbox">
+            <textarea id="preview" name="textbox"></textarea>
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+  </form>
+
   <script src="./script.js"></script>
 
 </body>
