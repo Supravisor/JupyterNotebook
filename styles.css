@@ -50,3 +50,7 @@ td {
   border-width: 1px;
   border-style: solid;
 }
+
+.btn-module {
+  background: #FFE873;
+}
