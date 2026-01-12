@@ -32,6 +32,10 @@ h1 {
   background-color: transparent;
 }
 
+table {
+  margin: auto;
+}
+
 td {
   vertical-align: top;
 }
