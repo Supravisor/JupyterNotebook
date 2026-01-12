@@ -26,6 +26,12 @@ h1 {
   background: rgb(150, 150, 150);
 }
 
+#textbox {
+  position: fixed;
+  padding-left: 5vw;
+  background-color: transparent;
+}
+
 td {
   vertical-align: top;
 }
