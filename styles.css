@@ -18,3 +18,7 @@ h1 {
   border-radius: 7px;
   background: rgb(150, 150, 150);
 }
+
+td {
+  vertical-align: top;
+}
