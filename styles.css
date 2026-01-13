@@ -61,3 +61,8 @@ td {
   background: #5cb85c;
   border-color: green;
 }
+
+.btn-success:hover {
+  background: #449d44;
+  border-color: #398439;
+}
