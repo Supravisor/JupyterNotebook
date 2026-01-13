@@ -38,6 +38,7 @@
     <input type="button" class="btn btn-success" value="csv" onclick="document.editor.textbox.value+='\n' + document.editor.variable.value + ' = pd.read_csv(\'' + document.editor.csvFileName.value + '.csv\')\n' + document.editor.variable.value + '.head()'" />
     <input type="button" class="btn btn-success" value="csv parse dates" onclick="document.editor.textbox.value+='\n' + document.editor.variable.value + ' = pd.read_csv(\n    \'' + document.editor.csvFileName.value + '.csv\',\n    parse_dates=[\'Dates\'])\n' + document.editor.variable.value + '.head()'" />
     <input class="btn" name="variable" id="variable" placeholder="variable" size="10" type="textfield" />
+    <input class="btn" name="csvFileName" placeholder="file name" size="10" type="textfield" />
   </p>
 
 </div>
