@@ -44,6 +44,8 @@ td {
   width: 45vw;
 }
 
+/* buttons */
+
 .btn {
   padding: 14px 12px;
   border-radius: 4px;
@@ -53,4 +55,18 @@ td {
 
 .btn-module {
   background: #FFE873;
+}
+
+.btn-success, .btn-date {
+  background: #5cb85c;
+  border-color: green;
+}
+
+.btn-success:hover {
+  background: #449d44;
+  border-color: #398439;
+}
+
+.hide {
+  display: none;
 }
