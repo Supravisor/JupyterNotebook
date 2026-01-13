@@ -32,6 +32,12 @@
 
   <hr />
 
+<h2>Load data</h2>
+
+  <p>
+    <input type="button" class="btn btn-success" value="csv" onclick="document.editor.textbox.value+='\n' + document.editor.variable.value + ' = pd.read_csv(\'' + document.editor.csvFileName.value + '.csv\')\n' + document.editor.variable.value + '.head()'" />
+  </p>
+
 </div>
           </td>
 
