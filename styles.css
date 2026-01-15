@@ -76,6 +76,11 @@ td {
   border-color: rgb(70, 30, 255);
 }
 
+.btn-primary:hover {
+  background: #204d74;
+  border-color: #2E6DA3;
+}
+
 .hide {
   display: none;
 }
