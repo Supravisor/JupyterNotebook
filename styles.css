@@ -67,6 +67,10 @@ td {
   border-color: #398439;
 }
 
+.btn-data {
+  background: #646464;
+}
+
 .hide {
   display: none;
 }

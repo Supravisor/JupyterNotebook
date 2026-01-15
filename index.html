@@ -47,6 +47,22 @@
   
   <hr />
 
+<h2>Data at a glance</h2>
+
+  <p>
+    <input type="button" class="btn btn-data" value="describe()" onclick="data(this.value);" />
+    <input type="button" class="btn btn-data" value="head()" onclick="data(this.value);" />
+    <input type="button" class="btn btn-data" value="info()" onclick="data(this.value);" />
+    <input type="button" class="btn btn-data" value="foot()" onclick="data(this.value);" />
+    <input type="button" class="btn btn-data" value="shape" onclick="data(this.value);" />
+  </p>
+
+  <ul>
+    <li>describe: statisical properties</li>
+    <li>info: data properties - structure and data types</li>
+    <li>shape: rows and columns</li>
+  </ul>
+
   <textarea id="load-data" class="hide">
 conn = sqlite3.connect('data/sakila.db')
 
