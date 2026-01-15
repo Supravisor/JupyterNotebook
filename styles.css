@@ -71,6 +71,11 @@ td {
   background: #646464;
 }
 
+.btn-primary {
+  background: #5c5cb8;
+  border-color: rgb(70, 30, 255);
+}
+
 .hide {
   display: none;
 }
