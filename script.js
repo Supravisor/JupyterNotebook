@@ -1,5 +1,5 @@
 
-// load data
+// Load data
 let variable = document.getElementById("variable");
 let loadData = document.getElementById("load-data");
 
@@ -10,3 +10,6 @@ const data = (stat) => {
       document.editor.textbox.value+= '\n' + document.editor.variable.value + '.' + stat;
   }
 }
+
+// Numerical analysis and visualisation
+let column = document.getElementById("column");
