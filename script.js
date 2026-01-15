@@ -14,3 +14,11 @@ const data = (stat) => {
 // Numerical analysis and visualisation
 let column = document.getElementById("column");
 let axis = document.getElementById("plot-variable");
+
+const describe = (stat) => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'Load data' section");
+  } else {
+      document.editor.textbox.value+= column.value === '' ? '\n' + document.editor.variable.value + '.' + stat +'()\n' : '\n' + document.editor.variable.value + '[\'' + document.editor.column.value + '\'].' + stat + '()\n'
+  }
+}
