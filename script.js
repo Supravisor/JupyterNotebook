@@ -33,3 +33,15 @@ const meanMedian = (stat) => {
       document.editor.textbox.value+= '\n' + variable.value + '[\'' + column.value + '\'].' + stat + '()';
   }
 }
+
+const analyseBox = (stat) => {
+  if (variable.value === '') {
+    return alert('Please enter a variable name in the \'Load data\' section.');
+  } else if (column.value === "") {
+      return alert("Please add a column name in the 'Numerical analysis and visualisation' section.");
+  } else if (axis.value !== "") {
+      document.editor.textbox.value+= '\n' + axis.value + ' = ' + variable.value + '[\'' + column.value + '\'].plot(kind=\'' + stat + '\', vert=False, figsize=(14,6))';
+  } else {
+      document.editor.textbox.value+= '\n' + variable.value + '[\'' + column.value + '\'].plot(kind=\'' + stat + '\', vert=False, figsize=(14,6))';
+  }
+}
