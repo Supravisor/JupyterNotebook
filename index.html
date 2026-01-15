@@ -49,9 +49,10 @@
 
 <h2>Data at a glance</h2>
 
-<p>
-  <input type="button" class="btn btn-data" value="describe()" onclick="data(this.value);" />
-</p>
+  <p>
+    <input type="button" class="btn btn-data" value="describe()" onclick="data(this.value);" />
+    <input type="button" class="btn btn-data" value="head()" onclick="data(this.value);" />
+  </p>
 
   <textarea id="load-data" class="hide">
 conn = sqlite3.connect('data/sakila.db')
