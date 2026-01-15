@@ -23,3 +23,13 @@ const describe = (stat) => {
       document.editor.textbox.value+= column.value === '' ? '\n' + document.editor.variable.value + '.' + stat +'()\n' : '\n' + document.editor.variable.value + '[\'' + document.editor.column.value + '\'].' + stat + '()\n'
   }
 }
+
+const meanMedian = (stat) => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'Load data' section");
+  } else if (column.value === "") {
+      return alert("Please add a column name.");
+  } else {
+      document.editor.textbox.value+= '\n' + variable.value + '[\'' + column.value + '\'].' + stat + '()';
+  }
+}
