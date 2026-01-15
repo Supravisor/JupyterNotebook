@@ -13,3 +13,4 @@ const data = (stat) => {
 
 // Numerical analysis and visualisation
 let column = document.getElementById("column");
+let axis = document.getElementById("plot-variable");
