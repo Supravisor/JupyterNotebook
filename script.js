@@ -57,3 +57,17 @@ const densityHist = (stat) => {
       document.editor.textbox.value+= '\n' + variable.value + '[\'' + column.value + '\'].plot(kind=\'' + stat + '\', figsize=(14,6))';
   }
 }
+
+const colour = () => {
+  if (variable.value === '') {
+    return alert("Please enter a variable name in the 'Load data' section.");
+  } else if (analysis === undefined) {
+      return alert("Please select an analysis type.");
+  } else if (column.value === "") {
+      return alert("Please add a column name in the 'Numerical analysis and visualisation' section.");
+  } else if (axis.value === "") {
+      return alert("Please add an axis name in the 'Numerical analysis and visualisation' section.");
+  } else {
+      document.editor.textbox.value+='\n' + document.editor.axis.value + '.axvline(' + document.editor.variable.value + '[\'' + document.editor.column.value + '\'].' + analysis + '(), color=\'' + document.editor.colours.value + '\')'
+  }
+}
