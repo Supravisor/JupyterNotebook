@@ -50,7 +50,7 @@ const densityHist = (stat) => {
   if (variable.value === '') {
     return alert('Please enter a variable name in the \'Load data\' section.');
   } else if (column.value === "") {
-      return alert("Please add a column name.");
+      return alert("Please add a column name in the 'Numerical analysis and visualisation' section.");
   } else if (axis.value !== "") {
       document.editor.textbox.value+= '\n' + axis.value + ' = ' + variable.value + '[\'' + column.value + '\'].plot(kind=\'' + stat + '\', figsize=(14,6))';
   } else {
