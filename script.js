@@ -71,3 +71,11 @@ const colour = () => {
       document.editor.textbox.value+='\n' + document.editor.axis.value + '.axvline(' + document.editor.variable.value + '[\'' + document.editor.column.value + '\'].' + analysis + '(), color=\'' + document.editor.colours.value + '\')'
   }
 }
+
+const round = () => {
+  if (mostValueCounts.value === "") {
+    return alert("Please add a number in the 'Categorical analysis and visualisation' section.");
+  } else {
+      document.editor.textbox.value+='.round(' + mostValueCounts.value + ')';
+  }
+}
