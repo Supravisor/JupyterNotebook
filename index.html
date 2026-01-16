@@ -74,7 +74,45 @@
 
   <p>
     <input type="button" class="btn btn-primary" value="describe" onclick="describe(this.value);" />
+    <input type="button" class="btn btn-primary" value="mean" onclick="meanMedian(this.value); analysis=this.value" />
+    <input type="button" class="btn btn-primary" value="median" onclick="meanMedian(this.value); analysis=this.value" />
+    <input type="button" class="btn btn-primary" value="box" onclick="analyseBox(this.value); analysis=this.value" />
+    <input type="button" class="btn btn-primary" value="density" onclick="densityHist(this.value); analysis=this.value" />
+    <input type="button" class="btn btn-primary" value="hist" onclick="densityHist(this.value); analysis=this.value" />
+    <input type="button" class="btn btn-primary" value="kde" onclick="densityHist(this.value); analysis=this.value" />
   </p>
+
+<p>
+  <input type="button" class="btn btn-primary" value="colour" onclick="colour()" />
+
+  <select name="colours">
+    <option value="brown">brown</option>
+    <option value="red">red</option>
+    <option value="purple">purple</option>
+    <option value="pink">pink</option>
+    <option value="orange">orange</option>
+    <option value="olive">olive</option>
+    <option value="blue">blue</option>
+    <option value="cyan">cyan</option>
+    <option value="green">green</option>
+    <option value="gray">gray</option>
+  </select>
+</p>
+
+<p>
+  <input type="button" class="btn btn-primary" value="x label" onclick="axisLabel(this.value)" />
+  <input type="button" class="btn btn-primary" value="y label" onclick="axisLabel(this.value)" />
+  <input class="btn" name="label" id="label" placeholder="label" size="10" type="textfield" />
+</p>
+
+<p>
+  <input type="button" class="btn btn-primary" value="bar" onclick="document.editor.textbox.value+=document.editor.axis.value === '' ? '\n' + document.editor.variable.value + '[\'' + document.editor.column.value + '\'].value_counts().plot(kind=\'' + this.value + '\', figsize=(14,6))\n' : '\n' + document.editor.axis.value + ' = ' + document.editor.variable.value + '[\'' + document.editor.column.value + '\'].value_counts().plot(kind=\'' + this.value + '\', figsize=(14,6))\n'; analysis=this.value" />
+  <input type="button" class="btn btn-primary" value="pie" onclick="document.editor.textbox.value+=document.editor.axis.value === '' ? '\n' + document.editor.variable.value + '[\'' + document.editor.column.value + '\'].value_counts().plot(kind=\'' + this.value + '\', figsize=(6,6))\n' : '\n' + document.editor.axis.value + ' = ' + document.editor.variable.value + '[\'' + document.editor.column.value + '\'].value_counts().plot(kind=\'' + this.value + '\', figsize=(6,6))\n'; analysis=this.value" />
+</p>
+
+<p>
+  <input type="button" class="btn btn-primary" value="round" onclick="round()" />
+</p>
 
   <textarea id="load-data" class="hide">
 conn = sqlite3.connect('data/sakila.db')
