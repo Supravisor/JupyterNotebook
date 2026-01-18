@@ -81,6 +81,16 @@ const round = () => {
   }
 }
 
+const axisLabel = (stat) => {
+  if (axis.value === '') {
+      return alert('Please enter an axis name in the axis field.');
+  } else if (label.value === '') {
+    return alert('Please enter a label name in the label field to the right.');
+  } else {
+      document.editor.textbox.value+= "\n" + document.editor.axis.value + ".set_" + stat.replace(" ", "") + "('" + document.editor.label.value + "')";
+  }
+}
+
 // Categorical analysis and visualisation
 const categoricalValueCounts = (stat) => {
   if (variable.value === '') {
