@@ -120,6 +120,8 @@
   <input type="button" class="btn btn-primary" value="unique list" onclick="document.editor.textbox.value+='\n' + document.editor.axis.value + document.editor.variable.value + '.loc[:, \'' + document.editor.column.value + '\'].unique()'" />
   <input type="button" class="btn btn-primary" value="value counts" onclick="categoricalValueCounts(this.value)" />
   <input type="button" class="btn btn-primary" value="bar" onclick="categoricalBar(this.value); analysis=this.value" />
+  <input type="button" class="btn btn-primary" value="pie" onclick="categoricalPie(this.value); analysis=this.value" />
+
 </p>
 
   <textarea id="load-data" class="hide">
