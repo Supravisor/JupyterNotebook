@@ -30,8 +30,7 @@
     <input type="button" class="btn btn-module" value="sqlite3" onclick="document.editor.textbox.value+='import sqlite3\n'" />
   </p>
 
-  <hr />
-
+<hr />
 <h2>Load data</h2>
 
   <p>
@@ -45,8 +44,7 @@
     <input type="button" class="btn btn-success" value="load data" onclick="document.editor.textbox.value+='\n' + loadData.innerHTML" />
   </p>
   
-  <hr />
-
+<hr />
 <h2>Data at a glance</h2>
 
   <p>
@@ -63,8 +61,7 @@
     <li>shape: rows and columns</li>
   </ul>
 
-  <hr />
-
+<hr />
 <h2>Numerical analysis and visualisation</h2>
 
   <p>
@@ -112,6 +109,22 @@
 
 <p>
   <input type="button" class="btn btn-primary" value="round" onclick="round()" />
+</p>
+
+<hr />
+<h2>Categorical analysis and visualisation</h2>
+
+<p>
+  <input type="button" class="btn btn-primary" value="most" onclick="document.editor.textbox.value+='\n' + document.editor.axis.value + document.editor.variable.value + '[\'' + document.editor.column.value + '\'].value_counts().head(1)'" />
+  <input type="button" class="btn btn-primary" value="unique" onclick="document.editor.textbox.value+='\n' + document.editor.axis.value + document.editor.variable.value + '[\'' + document.editor.column.value + '\'].' + this.value.replace(' ', '_') + '()'" />
+  <input type="button" class="btn btn-primary" value="unique list" onclick="document.editor.textbox.value+='\n' + document.editor.axis.value + document.editor.variable.value + '.loc[:, \'' + document.editor.column.value + '\'].unique()'" />
+  <input type="button" class="btn btn-primary" value="value counts" onclick="categoricalValueCounts(this.value)" />
+  <input type="button" class="btn btn-primary" value="bar" onclick="categoricalBar(this.value); analysis=this.value" />
+  <input type="button" class="btn btn-primary" value="pie" onclick="categoricalPie(this.value); analysis=this.value" />
+</p>
+
+<p>
+  <input class="btn" name="mostValueCounts" id="mostValueCounts" placeholder="number" style="width:60px;" type="number" />
 </p>
 
   <textarea id="load-data" class="hide">
