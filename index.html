@@ -30,8 +30,7 @@
     <input type="button" class="btn btn-module" value="sqlite3" onclick="document.editor.textbox.value+='import sqlite3\n'" />
   </p>
 
-  <hr />
-
+<hr />
 <h2>Load data</h2>
 
   <p>
@@ -45,8 +44,7 @@
     <input type="button" class="btn btn-success" value="load data" onclick="document.editor.textbox.value+='\n' + loadData.innerHTML" />
   </p>
   
-  <hr />
-
+<hr />
 <h2>Data at a glance</h2>
 
   <p>
@@ -63,8 +61,7 @@
     <li>shape: rows and columns</li>
   </ul>
 
-  <hr />
-
+<hr />
 <h2>Numerical analysis and visualisation</h2>
 
   <p>
@@ -113,6 +110,9 @@
 <p>
   <input type="button" class="btn btn-primary" value="round" onclick="round()" />
 </p>
+
+<hr />
+<h2>Categorical analysis and visualisation</h2>
 
   <textarea id="load-data" class="hide">
 conn = sqlite3.connect('data/sakila.db')
