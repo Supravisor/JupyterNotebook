@@ -121,3 +121,19 @@ const categoricalBar = (stat) => {
      }
   }
 }
+
+const categoricalPie = (stat) => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'Load data' section.");
+  } else if (column.value === "") {
+      return alert("Please add a column name.");
+  } else {
+     let head = mostValueCounts.value;
+     if (head) {
+      document.editor.textbox.value+='\n' + variable.value + '[\'' + column.value + '\'].value_counts().head(' + head + ').plot(kind=\'' + stat + '\', figsize=(6,6))';
+     } else {
+        document.editor.textbox.value+='\n' + variable.value + '[\'' + column.value + '\'].value_counts().plot(kind=\'' + stat + '\', figsize=(6,6))';
+     }
+  }
+}
+
