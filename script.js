@@ -76,6 +76,23 @@ const round = () => {
   if (mostValueCounts.value === "") {
     return alert("Please add a number in the 'Categorical analysis and visualisation' section.");
   } else {
+    
       document.editor.textbox.value+='.round(' + mostValueCounts.value + ')';
+  }
+}
+
+// Categorical analysis and visualisation
+const categoricalValueCounts = (stat) => {
+  if (variable.value === '') {
+    return alert("Please enter a variable name in the 'Load data' section.");
+  } else if (column.value === "") {
+      return alert("Please add a column name.");
+  } else {
+     let head = mostValueCounts.value;
+     if (head) {
+      document.editor.textbox.value+='\n' + variable.value + '[\'' + column.value + '\'].' + stat.replace(' ', '_') + '().head(' + head + ')';
+     } else {
+        document.editor.textbox.value+='\n' + variable.value + '[\'' + column.value + '\'].' + stat.replace(' ', '_') + '()'
+     }
   }
 }
