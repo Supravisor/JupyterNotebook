@@ -117,6 +117,7 @@
 <p>
   <input type="button" class="btn btn-primary" value="most" onclick="document.editor.textbox.value+='\n' + document.editor.axis.value + document.editor.variable.value + '[\'' + document.editor.column.value + '\'].value_counts().head(1)'" />
   <input type="button" class="btn btn-primary" value="unique" onclick="document.editor.textbox.value+='\n' + document.editor.axis.value + document.editor.variable.value + '[\'' + document.editor.column.value + '\'].' + this.value.replace(' ', '_') + '()'" />
+  <input type="button" class="btn btn-primary" value="unique list" onclick="document.editor.textbox.value+='\n' + document.editor.axis.value + document.editor.variable.value + '.loc[:, \'' + document.editor.column.value + '\'].unique()'" />
 </p>
 
   <textarea id="load-data" class="hide">
