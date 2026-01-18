@@ -114,6 +114,10 @@
 <hr />
 <h2>Categorical analysis and visualisation</h2>
 
+<p>
+  <input type="button" class="btn btn-primary" value="most" onclick="document.editor.textbox.value+='\n' + document.editor.axis.value + document.editor.variable.value + '[\'' + document.editor.column.value + '\'].value_counts().head(1)'" />
+</p>
+
   <textarea id="load-data" class="hide">
 conn = sqlite3.connect('data/sakila.db')
 
