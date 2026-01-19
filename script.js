@@ -137,3 +137,13 @@ const categoricalPie = (stat) => {
   }
 }
 
+// Correlation between columns
+const matshow = (stat) => {
+  if (correlation.value === "") {
+    return alert('Please enter a name in the correlation field.');
+  } else if (figure.value === "") {
+      return alert('Please enter a name in the figure field.');
+  } else {
+      document.editor.textbox.value+='\nplt.' + stat + '(' + document.editor.correlation.value + ', cmap=\'RdBu\', fignum=' + document.editor.figure.value + '.number)'
+  }
+}
