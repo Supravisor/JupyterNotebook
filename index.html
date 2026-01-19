@@ -130,6 +130,10 @@
 <hr />
 <h2>Correlation between columns</h2>
 
+<p>
+  <input type="button" class="btn btn-primary" value="corr" onclick="document.editor.textbox.value+=document.editor.variable.value === '' ? alert('Please enter a variable name in the \'Load data\' section.') || '' : document.editor.correlation.value === '' ? '\n' + document.editor.variable.value + '.' + this.value + '()' : '\n' + document.editor.correlation.value + ' = ' + document.editor.variable.value + '.' + this.value + '()'" />
+</p>
+
   <textarea id="load-data" class="hide">
 conn = sqlite3.connect('data/sakila.db')
 
