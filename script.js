@@ -147,3 +147,15 @@ const matshow = (stat) => {
       document.editor.textbox.value+='\nplt.' + stat + '(' + document.editor.correlation.value + ', cmap=\'RdBu\', fignum=' + document.editor.figure.value + '.number)'
   }
 }
+
+const scatters = (stat) => {
+  if (variable.value === "") {
+    return alert('Please enter a variable name in the \'Load data\' section.');
+  } else if (scatterX.value === "") {
+      return alert('Please enter a value in the \'scatter x\' field.');
+  } else if (scatterY.value === "") {
+      return alert('Please enter a value in the \'scatter y\' field.');
+  } else {
+      return document.editor.textbox.value+='\n' + document.editor.variable.value + '.plot(kind=\'' + stat + '\', x=\'' + document.editor.scatterX.value + '\', y=\'' + document.editor.scatterY.value + '\', figsize=(6,6))';
+  }
+}
