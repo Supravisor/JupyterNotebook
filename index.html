@@ -115,10 +115,6 @@
 <h2>Categorical analysis and visualisation</h2>
 
 <p>
-  <input class="btn" name="correlation" id="correlation" placeholder="correlation" size="10" type="textfield" />
-</p>
-
-<p>
   <input type="button" class="btn btn-primary" value="most" onclick="document.editor.textbox.value+='\n' + document.editor.axis.value + document.editor.variable.value + '[\'' + document.editor.column.value + '\'].value_counts().head(1)'" />
   <input type="button" class="btn btn-primary" value="unique" onclick="document.editor.textbox.value+='\n' + document.editor.axis.value + document.editor.variable.value + '[\'' + document.editor.column.value + '\'].' + this.value.replace(' ', '_') + '()'" />
   <input type="button" class="btn btn-primary" value="unique list" onclick="document.editor.textbox.value+='\n' + document.editor.axis.value + document.editor.variable.value + '.loc[:, \'' + document.editor.column.value + '\'].unique()'" />
@@ -133,6 +129,11 @@
 
 <hr />
 <h2>Correlation between columns</h2>
+
+<p>
+  <input class="btn" name="correlation" id="correlation" placeholder="correlation" size="10" type="textfield" />
+  <input class="btn" name="figure" id="figure" placeholder="figure" size="10" type="textfield" />
+</p>
 
 <p>
   <input type="button" class="btn btn-primary" value="corr" onclick="document.editor.textbox.value+=document.editor.variable.value === '' ? alert('Please enter a variable name in the \'Load data\' section.') || '' : document.editor.correlation.value === '' ? '\n' + document.editor.variable.value + '.' + this.value + '()' : '\n' + document.editor.correlation.value + ' = ' + document.editor.variable.value + '.' + this.value + '()'" />
