@@ -171,3 +171,21 @@ const boxPlot = () => {
       return document.editor.textbox.value+= '\n' + boxPlotAxis.value + ' = ' + document.editor.variable.value + '[[' + document.editor.boxplotCats.value.split(',').map(el => `'${el.replace(' ', '')}'`).join().replaceAll(',', ', ') + ']].boxplot(by=\'' + document.editor.boxplotCats.value.split(',')[document.editor.boxplotCats.value.split(',').length - 1].replace(' ', '') + '\', figsize=(14,6))\n' + boxPlotAxis.value + '.set_ylabel(\'' + document.editor.boxplotCats.value.split(',')[0] + '\')';
   }
 }
+
+const boxPlotGrouped = () => {
+  if (variable.value === '') {
+    return alert('Please enter a variable name in the \'Load data\' section.');
+  } else if (boxPlotCategory.value === '') {
+      return alert("Please enter a category in the 'category' field to the right.");
+  } else if (boxPlotCategoryValue.value === '') {
+      return alert("Please enter a category value in the 'value' field to the right.");
+  } else if (boxPlotCategoryColumnA.value === '') {
+      return alert("Please enter a category in the 'column A' field to the right.");
+  } else if (boxPlotCategoryColumnB.value === '') {
+      return alert("Please enter a category in the 'column B' field to the right.");
+  } else if (boxPlotAxis.value === '') {
+      return alert("Please enter a name in the 'boxplot axis' field.");
+  } else {
+      return document.editor.textbox.value+= "\n" + boxPlotAxis.value + " = " + variable.value + ".loc[" + variable.value + "['" + boxPlotCategory.value + "'] == " + boxPlotCategoryValue.value + ", ['" + boxPlotCategoryColumnA.value + "', '" + boxPlotCategoryColumnB.value + "']]" + "\n" + boxPlotAxis.value + ".boxplot(by='" + boxPlotCategoryColumnB.value + "', figsize=(14,6))";
+  }
+}
