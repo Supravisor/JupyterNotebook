@@ -158,6 +158,10 @@
   <input type="button" class="btn btn-primary" value="boxplot" onclick="boxPlot(); analysis=this.value" />
 </p>
 
+<p>
+  <input type="button" class="btn btn-primary" value="grouped boxplot" onclick="boxPlotGrouped(); analysis=this.value" />
+</p>
+
   <textarea id="load-data" class="hide">
 conn = sqlite3.connect('data/sakila.db')
 
