@@ -154,6 +154,10 @@
   <input class="btn" name="boxplotCats" id="plots" placeholder="boxplot catergories" size="12" type="textfield" />
 </p>
 
+<p>
+  <input type="button" class="btn btn-primary" value="boxplot" onclick="boxPlot(); analysis=this.value" />
+</p>
+
   <textarea id="load-data" class="hide">
 conn = sqlite3.connect('data/sakila.db')
 
