@@ -189,3 +189,13 @@ const boxPlotGrouped = () => {
       return document.editor.textbox.value+= "\n" + boxPlotAxis.value + " = " + variable.value + ".loc[" + variable.value + "['" + boxPlotCategory.value + "'] == " + boxPlotCategoryValue.value + ", ['" + boxPlotCategoryColumnA.value + "', '" + boxPlotCategoryColumnB.value + "']]" + "\n" + boxPlotAxis.value + ".boxplot(by='" + boxPlotCategoryColumnB.value + "', figsize=(14,6))";
   }
 }
+
+const box = () => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'Load data' section.");
+  } else if (plots.value === '') {
+      return alert("Please enter at least one category into the 'boxplot categories' field.");
+  } else {
+      return document.editor.textbox.value+= '\n' + document.editor.variable.value + '[[' + document.editor.boxplotCats.value.split(',').map(el => `'${el.replace(' ', '')}'`) + ']].plot(kind=\'box\', subplots=True, layout=(2,3), figsize=(14,8))';
+  }
+}
