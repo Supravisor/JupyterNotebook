@@ -149,6 +149,10 @@
   <input class="btn" name="scatterY" id="scatterY" placeholder="scatter Y" size="10" type="textfield" />
 </p>
 
+<p>
+  <input type="button" class="btn btn-primary" value="boxplot cols" onclick="document.editor.textbox.value+=document.editor.boxplotCats.value === '' ? alert('Please enter some comma separated categories.') || '' : '\n' + this.value.replace(' ', '_') + ' = [' + document.editor.boxplotCats.value.split(',').map(el => `'${el.replace(' ', '')}'`).join().replaceAll(',', ', ') + ']'; document.editor.boxplotCats.value=''; analysis=this.value" />
+</p>
+
   <textarea id="load-data" class="hide">
 conn = sqlite3.connect('data/sakila.db')
 
