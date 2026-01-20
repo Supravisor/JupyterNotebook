@@ -150,12 +150,14 @@
 </p>
 
 <p>
+  <input type="button" class="btn btn-primary" value="box" onclick="box(); analysis=this.value" />
   <input type="button" class="btn btn-primary" value="boxplot cols" onclick="document.editor.textbox.value+=document.editor.boxplotCats.value === '' ? alert('Please enter some comma separated categories.') || '' : '\n' + this.value.replace(' ', '_') + ' = [' + document.editor.boxplotCats.value.split(',').map(el => `'${el.replace(' ', '')}'`).join().replaceAll(',', ', ') + ']'; document.editor.boxplotCats.value=''; analysis=this.value" />
   <input class="btn" name="boxplotCats" id="plots" placeholder="boxplot catergories" size="12" type="textfield" />
 </p>
 
 <p>
   <input type="button" class="btn btn-primary" value="boxplot" onclick="boxPlot(); analysis=this.value" />
+  <input class="btn" name="boxPlotAxis" id="boxPlotAxis" placeholder="boxplot axis" size="10" type="textfield" />
 </p>
 
 <p>
@@ -164,11 +166,6 @@
   <input class="btn" name="boxPlotCategoryValue" id="boxPlotCategoryValue" placeholder="value" size="10" type="textfield" />
   <input class="btn" name="boxPlotColumnA" id="boxPlotCategoryColumnA" placeholder="column A" size="10" type="textfield" />
   <input class="btn" name="boxPlotColumnB" id="boxPlotCategoryColumnB" placeholder="column B" size="10" type="textfield" />
-</p>
-
-<p>
-  <input type="button" class="btn btn-primary" value="box" onclick="box(); analysis=this.value" />
-  <input class="btn" name="boxPlotAxis" id="boxPlotAxis" placeholder="boxplot axis" size="10" type="textfield" />
 </p>
 
   <textarea id="load-data" class="hide">
