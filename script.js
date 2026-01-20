@@ -159,3 +159,15 @@ const scatters = (stat) => {
       return document.editor.textbox.value+='\n' + document.editor.variable.value + '.plot(kind=\'' + stat + '\', x=\'' + document.editor.scatterX.value + '\', y=\'' + document.editor.scatterY.value + '\', figsize=(6,6))';
   }
 }
+
+const boxPlot = () => {
+  if (variable.value === '') {
+    return alert('Please enter a variable name in the \'Load data\' section.');
+  } else if (plots.value === '') {
+      return alert("Please enter at least one category into the 'boxplot categories' field.");
+  } else if (boxPlotAxis.value === '') {
+      return alert("Please enter a name in the 'boxplot axis' field.");
+  } else {
+      return document.editor.textbox.value+= '\n' + boxPlotAxis.value + ' = ' + document.editor.variable.value + '[[' + document.editor.boxplotCats.value.split(',').map(el => `'${el.replace(' ', '')}'`).join().replaceAll(',', ', ') + ']].boxplot(by=\'' + document.editor.boxplotCats.value.split(',')[document.editor.boxplotCats.value.split(',').length - 1].replace(' ', '') + '\', figsize=(14,6))\n' + boxPlotAxis.value + '.set_ylabel(\'' + document.editor.boxplotCats.value.split(',')[0] + '\')';
+  }
+}
