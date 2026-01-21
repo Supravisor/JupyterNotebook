@@ -230,3 +230,15 @@ const columnPlot = (stat) => {
       document.editor.textbox.value+='\n' + variable.value + '[\'' + newColumn.value + '\'].plot(kind=\'' + stat + '\', figsize=(14,6))';
   }
 }
+
+const columnScatter = (stat) => {
+  if (variable.value === '') {
+    return alert('Please enter a variable name in the \'Load data\' section');
+  } else if (columnA.value === "") {
+      return alert("Please add a primary column name in the 'Column Wrangling' section.");
+  } else if (scatterAxis.value === "") {
+      return alert("Please add a scatter column name.");
+  } else {
+      document.editor.textbox.value+='\n' + variable.value + '.plot(kind=\'' + stat + '\', x=\'' + columnA.value + '\', y=\'' + scatterAxis.value + '\', figsize=(6,6))';
+  }
+}
