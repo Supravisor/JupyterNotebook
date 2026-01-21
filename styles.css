@@ -97,3 +97,7 @@ input {
   margin-left: 6px;
   margin-bottom: 6px;
 }
+
+input:not([type:"button"]) {
+  border-color: black;
+}
