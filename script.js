@@ -15,6 +15,7 @@ const data = (stat) => {
 let column = document.getElementById("column");
 let axis = document.getElementById("plot-variable");
 let analysis;
+let mostValueCounts = document.getElementById("mostValueCounts");
 
 const describe = (stat) => {
   if (variable.value === "") {
@@ -138,6 +139,8 @@ const categoricalPie = (stat) => {
 }
 
 // Correlation between columns
+let correlation = document.getElementById("correlation");
+
 const matshow = (stat) => {
   if (correlation.value === "") {
     return alert('Please enter a name in the correlation field.');
@@ -197,5 +200,50 @@ const box = () => {
       return alert("Please enter at least one category into the 'boxplot categories' field.");
   } else {
       return document.editor.textbox.value+= '\n' + document.editor.variable.value + '[[' + document.editor.boxplotCats.value.split(',').map(el => `'${el.replace(' ', '')}'`) + ']].plot(kind=\'box\', subplots=True, layout=(2,3), figsize=(14,8))';
+  }
+}
+
+// Add and calculate a new column
+let scatterAxis = document.getElementById("scatterAxis");
+
+const columnWrangle = (stat) => {
+  let bin = "";
+
+  if (stat === "+") {
+    bin = " bins=100,";
+  }
+
+  if (variable.value === '') {
+    return alert('Please enter a variable name in the \'Load data\' section');
+  } else if (newColumn.value === "") {
+      return alert("Please add a new column name.");
+  } else if (columnA.value === "") {
+      return alert("Please add a primary column name in the 'Column Wrangling' section.");
+  } else if (columnB.value === "") {
+      return alert("Please add a secondary column name in the 'Column Wrangling' section.");
+  } else {
+      document.editor.textbox.value+='\n' + variable.value + '[\'' + newColumn.value + '\'] = ' + variable.value + '[\'' + columnA.value + '\'] ' + stat + ' ' + variable.value + '[\'' + columnB.value + '\']\n' + variable.value + '[\'' + newColumn.value + '\'].head()' + '\n' + variable.value + '[\'' + newColumn.value + '\'].plot(kind=\'hist\',' + bin + ' figsize=(14,6))';
+  }
+}
+
+const columnPlot = (stat) => {
+  if (variable.value === "") {
+      return alert("Please enter a variable name in the 'Load data' section");
+  } else if (newColumn.value === "") {
+      return alert("Please add a new column name.");
+  } else {
+      document.editor.textbox.value+='\n' + variable.value + '[\'' + newColumn.value + '\'].plot(kind=\'' + stat + '\', figsize=(14,6))';
+  }
+}
+
+const columnScatter = (stat) => {
+  if (variable.value === '') {
+    return alert('Please enter a variable name in the \'Load data\' section');
+  } else if (columnA.value === "") {
+      return alert("Please add a primary column name in the 'Column Wrangling' section.");
+  } else if (scatterAxis.value === "") {
+      return alert("Please add a scatter column name.");
+  } else {
+      document.editor.textbox.value+='\n' + variable.value + '.plot(kind=\'' + stat + '\', x=\'' + columnA.value + '\', y=\'' + scatterAxis.value + '\', figsize=(6,6))';
   }
 }

@@ -81,6 +81,16 @@ td {
   border-color: #2E6DA3;
 }
 
+.btn-column {
+  background: orange;
+  border-color: darkOrange;
+}
+
+.btn-column:hover {
+  background: darkOrange;
+  border-color: chocolate;
+}
+
 .hide {
   display: none;
 }
