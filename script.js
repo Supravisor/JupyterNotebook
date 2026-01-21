@@ -139,6 +139,8 @@ const categoricalPie = (stat) => {
 }
 
 // Correlation between columns
+let correlation = document.getElementById("correlation");
+
 const matshow = (stat) => {
   if (correlation.value === "") {
     return alert('Please enter a name in the correlation field.');
