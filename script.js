@@ -15,6 +15,7 @@ const data = (stat) => {
 let column = document.getElementById("column");
 let axis = document.getElementById("plot-variable");
 let analysis;
+let mostValueCounts = document.getElementById("mostValueCounts");
 
 const describe = (stat) => {
   if (variable.value === "") {
