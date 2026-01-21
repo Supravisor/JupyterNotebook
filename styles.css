@@ -86,6 +86,11 @@ td {
   border-color: darkOrange;
 }
 
+.btn-column:hover {
+  background: darkOrange;
+  border-color: chocolate;
+}
+
 .hide {
   display: none;
 }
