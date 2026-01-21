@@ -220,3 +220,13 @@ const columnWrangle = (stat) => {
       document.editor.textbox.value+='\n' + variable.value + '[\'' + newColumn.value + '\'] = ' + variable.value + '[\'' + columnA.value + '\'] ' + stat + ' ' + variable.value + '[\'' + columnB.value + '\']\n' + variable.value + '[\'' + newColumn.value + '\'].head()' + '\n' + variable.value + '[\'' + newColumn.value + '\'].plot(kind=\'hist\',' + bin + ' figsize=(14,6))';
   }
 }
+
+const columnPlot = (stat) => {
+  if (variable.value === "") {
+      return alert("Please enter a variable name in the 'Load data' section");
+  } else if (newColumn.value === "") {
+      return alert("Please add a new column name.");
+  } else {
+      document.editor.textbox.value+='\n' + variable.value + '[\'' + newColumn.value + '\'].plot(kind=\'' + stat + '\', figsize=(14,6))';
+  }
+}
