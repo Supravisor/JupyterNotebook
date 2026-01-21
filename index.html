@@ -127,6 +127,47 @@
   <input class="btn" name="mostValueCounts" id="mostValueCounts" placeholder="number" style="width:60px;" type="number" />
 </p>
 
+<hr />
+<h2>Correlation between columns</h2>
+
+<p>
+  <input class="btn" name="correlation" id="correlation" placeholder="correlation" size="10" type="textfield" />
+  <input class="btn" name="figure" id="figure" placeholder="figure" size="10" type="textfield" />
+</p>
+
+<p>
+  <input type="button" class="btn btn-primary" value="corr" onclick="document.editor.textbox.value+=document.editor.variable.value === '' ? alert('Please enter a variable name in the \'Load data\' section.') || '' : document.editor.correlation.value === '' ? '\n' + document.editor.variable.value + '.' + this.value + '()' : '\n' + document.editor.correlation.value + ' = ' + document.editor.variable.value + '.' + this.value + '()'" />
+  <input type="button" class="btn btn-primary" value="figure" onclick="document.editor.textbox.value+=document.editor.figure.value === '' ? alert('Please enter a name in the figure field.') || '' : '\n' + document.editor.figure.value + ' = plt.' + this.value + '(figsize=(8,8))'" />
+  <input type="button" class="btn btn-primary" value="matshow" onclick="matshow(this.value)" />
+  <input type="button" class="btn btn-primary" value="x ticks" onclick="document.editor.textbox.value+=document.editor.correlation.value === '' ? alert('Please enter a name in the correlation field.') || '' : '\nplt.' + this.value.replace(' ', '') + '(range(len(' + document.editor.correlation.value + '.columns)), ' + document.editor.correlation.value + '.columns, rotation=\'vertical\')'" />
+  <input type="button" class="btn btn-primary" value="y ticks" onclick="document.editor.textbox.value+=document.editor.correlation.value === '' ? alert('Please enter a name in the correlation field.') || '' : '\nplt.' + this.value.replace(' ', '') + '(range(len(' + document.editor.correlation.value + '.columns)), ' + document.editor.correlation.value + '.columns)'" />
+</p>
+
+<p>
+  <input type="button" class="btn btn-primary" value="scatter" onclick="scatters(this.value);" />
+  <input class="btn" name="scatterX" id="scatterX" placeholder="scatter X" size="10" type="textfield" />
+  <input class="btn" name="scatterY" id="scatterY" placeholder="scatter Y" size="10" type="textfield" />
+</p>
+
+<p>
+  <input type="button" class="btn btn-primary" value="box" onclick="box(); analysis=this.value" />
+  <input type="button" class="btn btn-primary" value="boxplot cols" onclick="document.editor.textbox.value+=document.editor.boxplotCats.value === '' ? alert('Please enter some comma separated categories.') || '' : '\n' + this.value.replace(' ', '_') + ' = [' + document.editor.boxplotCats.value.split(',').map(el => `'${el.replace(' ', '')}'`).join().replaceAll(',', ', ') + ']'; document.editor.boxplotCats.value=''; analysis=this.value" />
+  <input class="btn" name="boxplotCats" id="plots" placeholder="boxplot catergories" size="12" type="textfield" />
+</p>
+
+<p>
+  <input type="button" class="btn btn-primary" value="boxplot" onclick="boxPlot(); analysis=this.value" />
+  <input class="btn" name="boxPlotAxis" id="boxPlotAxis" placeholder="boxplot axis" size="10" type="textfield" />
+</p>
+
+<p>
+  <input type="button" class="btn btn-primary" value="grouped boxplot" onclick="boxPlotGrouped(); analysis=this.value" />
+  <input class="btn" name="boxPlotCategory" id="boxPlotCategory" placeholder="category" size="10" type="textfield" />
+  <input class="btn" name="boxPlotCategoryValue" id="boxPlotCategoryValue" placeholder="value" size="10" type="textfield" />
+  <input class="btn" name="boxPlotColumnA" id="boxPlotCategoryColumnA" placeholder="column A" size="10" type="textfield" />
+  <input class="btn" name="boxPlotColumnB" id="boxPlotCategoryColumnB" placeholder="column B" size="10" type="textfield" />
+</p>
+
   <textarea id="load-data" class="hide">
 conn = sqlite3.connect('data/sakila.db')
 
