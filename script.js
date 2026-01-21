@@ -204,6 +204,8 @@ const box = () => {
 }
 
 // Add and calculate a new column
+let scatterAxis = document.getElementById("scatterAxis");
+
 const columnWrangle = (stat) => {
   let bin = "";
 
