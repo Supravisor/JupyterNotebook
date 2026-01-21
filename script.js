@@ -199,3 +199,24 @@ const box = () => {
       return document.editor.textbox.value+= '\n' + document.editor.variable.value + '[[' + document.editor.boxplotCats.value.split(',').map(el => `'${el.replace(' ', '')}'`) + ']].plot(kind=\'box\', subplots=True, layout=(2,3), figsize=(14,8))';
   }
 }
+
+// Add and calculate a new column
+const columnWrangle = (stat) => {
+  let bin = "";
+
+  if (stat === "+") {
+    bin = " bins=100,";
+  }
+
+  if (variable.value === '') {
+    return alert('Please enter a variable name in the \'Load data\' section');
+  } else if (newColumn.value === "") {
+      return alert("Please add a new column name.");
+  } else if (columnA.value === "") {
+      return alert("Please add a primary column name in the 'Column Wrangling' section.");
+  } else if (columnB.value === "") {
+      return alert("Please add a secondary column name in the 'Column Wrangling' section.");
+  } else {
+      document.editor.textbox.value+='\n' + variable.value + '[\'' + newColumn.value + '\'] = ' + variable.value + '[\'' + columnA.value + '\'] ' + stat + ' ' + variable.value + '[\'' + columnB.value + '\']\n' + variable.value + '[\'' + newColumn.value + '\'].head()' + '\n' + variable.value + '[\'' + newColumn.value + '\'].plot(kind=\'hist\',' + bin + ' figsize=(14,6))';
+  }
+}
