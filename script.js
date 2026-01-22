@@ -249,6 +249,8 @@ const columnScatter = (stat) => {
 }
 
 // Modify existing column
+let modify = document.getElementById("modify");
+
 const columnWrangleModify = (stat) => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'Load data' section");
