@@ -247,3 +247,18 @@ const columnScatter = (stat) => {
       document.editor.textbox.value+='\n' + variable.value + '.plot(kind=\'' + stat + '\', x=\'' + columnA.value + '\', y=\'' + scatterAxis.value + '\', figsize=(6,6))';
   }
 }
+
+// Modify existing column
+const columnWrangleModify = (stat) => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'Load data' section");
+  } else if (columnA.value === "") {
+      return alert("Please add a primary column name in the 'Column Wrangling' section.");
+  } else if (modify.value === "") {
+      return alert("Please add a value in the modify field to the right.");
+  } else if (!Number(modify.value) && Number(modify.value) != "0") {
+      return alert("Please add a valid number in the modify field to the right.");
+  } else {
+      document.editor.textbox.value+='\n' + variable.value + '[\'' + columnA.value + '\'] ' + stat + '= ' + modify.value + '\n' + variable.value + '[\'' + columnA.value + '\'].head()';
+  }
+}
