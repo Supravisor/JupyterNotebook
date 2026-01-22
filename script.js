@@ -141,6 +141,7 @@ const categoricalPie = (stat) => {
 // Correlation between columns
 let correlation = document.getElementById("correlation");
 let figure = document.getElementById("figure");
+let scatterX = document.getElementById("scatterX");
 
 const matshow = (stat) => {
   if (correlation.value === "") {
