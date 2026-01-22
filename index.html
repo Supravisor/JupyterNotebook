@@ -192,6 +192,17 @@
   <input class="btn" name="scatterAxis" id="scatterAxis" placeholder="scatter" size="10" type="textfield" />
 </p>
 
+<hr />
+<h2>Modify existing column</h2>
+
+<p>
+  <input type="button" class="btn btn-column" value="add" onclick="columnWrangleModify('+');" />
+  <input type="button" class="btn btn-column" value="divide" onclick="columnWrangleModify('/');" />
+  <input type="button" class="btn btn-column" value="multiply" onclick="columnWrangleModify('*');" />
+  <input type="button" class="btn btn-column" value="subtract" onclick="columnWrangleModify('-');" />
+  <input class="btn" name="modify" id="modify" placeholder="modify" size="10" type="textfield" />
+</p>
+
   <textarea id="load-data" class="hide">
 conn = sqlite3.connect('data/sakila.db')
 
