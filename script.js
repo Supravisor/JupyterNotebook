@@ -146,6 +146,7 @@ let scatterY = document.getElementById("scatterY");
 let plots = document.getElementById("plots");
 let boxPlotAxis = document.getElementById("boxPlotAxis");
 let boxPlotCatergory = document.getElementById("boxPlotsCategory");
+let boxPlotCatergoryValue = document.getElementById("boxPlotCategoryValue");
 
 const matshow = (stat) => {
   if (correlation.value === "") {
@@ -280,7 +281,7 @@ const individualSelection = () => {
   } else if (columnB.value === "") {
       return alert("Please add a secondary column name in the 'Column Wrangling' section.");
   } else {
-      document.editor.textbox.value+='\n' + variable.value + '.loc[' + variable.value + '[\'' + columnA.value + '\'] == \'' + columnB.value + '\']' + '\n' + variable.value + '[\'' + columnA.value + '\'].head()';
+      document.editor.textbox.value+="\n" + variable.value + ".loc[" + variable.value + "['" + columnA.value + "'] == '" + columnB.value + "']" + "\n" + variable.value + "['" + columnA.value + "'].head()";
   }
 }
 
