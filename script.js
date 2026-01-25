@@ -7,7 +7,7 @@ const data = (stat) => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'Load data' section");
   } else {
-      document.editor.textbox.value+= '\n' + document.editor.variable.value + '.' + stat;
+      document.editor.textbox.value+= "\n" + document.editor.variable.value + "." + stat;
   }
 }
 
@@ -21,7 +21,7 @@ const describe = (stat) => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'Load data' section");
   } else {
-      document.editor.textbox.value+= column.value === '' ? '\n' + document.editor.variable.value + '.' + stat +'()\n' : '\n' + document.editor.variable.value + '[\'' + document.editor.column.value + '\'].' + stat + '()\n'
+      document.editor.textbox.value+= column.value === "" ? "\n" + document.editor.variable.value + "." + stat + "()\n" : "\n" + document.editor.variable.value + "['" + document.editor.column.value + "']." + stat + "()\n";
   }
 }
 
@@ -31,36 +31,36 @@ const meanMedian = (stat) => {
   } else if (column.value === "") {
       return alert("Please add a column name in the 'Numerical analysis and visualisation' section.");
   } else {
-      document.editor.textbox.value+= '\n' + variable.value + '[\'' + column.value + '\'].' + stat + '()';
+      document.editor.textbox.value+= "\n" + variable.value + "['" + column.value + "']." + stat + "()";
   }
 }
 
 const analyseBox = (stat) => {
-  if (variable.value === '') {
-    return alert('Please enter a variable name in the \'Load data\' section.');
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'Load data' section.");
   } else if (column.value === "") {
       return alert("Please add a column name in the 'Numerical analysis and visualisation' section.");
   } else if (axis.value !== "") {
-      document.editor.textbox.value+= '\n' + axis.value + ' = ' + variable.value + '[\'' + column.value + '\'].plot(kind=\'' + stat + '\', vert=False, figsize=(14,6))';
+      document.editor.textbox.value+= "\n" + axis.value + " = " + variable.value + "['" + column.value + "'].plot(kind='" + stat + "', vert=False, figsize=(14,6))";
   } else {
-      document.editor.textbox.value+= '\n' + variable.value + '[\'' + column.value + '\'].plot(kind=\'' + stat + '\', vert=False, figsize=(14,6))';
+      document.editor.textbox.value+= "\n" + variable.value + "['" + column.value + "'].plot(kind='" + stat + "', vert=False, figsize=(14,6))";
   }
 }
 
 const densityHist = (stat) => {
-  if (variable.value === '') {
-    return alert('Please enter a variable name in the \'Load data\' section.');
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'Load data' section.");
   } else if (column.value === "") {
       return alert("Please add a column name in the 'Numerical analysis and visualisation' section.");
   } else if (axis.value !== "") {
-      document.editor.textbox.value+= '\n' + axis.value + ' = ' + variable.value + '[\'' + column.value + '\'].plot(kind=\'' + stat + '\', figsize=(14,6))';
+      document.editor.textbox.value+= "\n" + axis.value + " = " + variable.value + "['" + column.value + "'].plot(kind='" + stat + "', figsize=(14,6))";
   } else {
-      document.editor.textbox.value+= '\n' + variable.value + '[\'' + column.value + '\'].plot(kind=\'' + stat + '\', figsize=(14,6))';
+      document.editor.textbox.value+= "\n" + variable.value + "['" + column.value + "'].plot(kind='" + stat + "', figsize=(14,6))";
   }
 }
 
 const colour = () => {
-  if (variable.value === '') {
+  if (variable.value === "") {
     return alert("Please enter a variable name in the 'Load data' section.");
   } else if (analysis === undefined) {
       return alert("Please select an analysis type.");
@@ -83,10 +83,10 @@ const round = () => {
 }
 
 const axisLabel = (stat) => {
-  if (axis.value === '') {
-      return alert('Please enter an axis name in the axis field.');
+  if (axis.value === "") {
+      return alert("Please enter an axis name in the axis field.");
   } else if (label.value === '') {
-    return alert('Please enter a label name in the label field to the right.');
+    return alert("Please enter a label name in the label field to the right.");
   } else {
       document.editor.textbox.value+= "\n" + document.editor.axis.value + ".set_" + stat.replace(" ", "") + "('" + document.editor.label.value + "')";
   }
@@ -94,7 +94,7 @@ const axisLabel = (stat) => {
 
 // Categorical analysis and visualisation
 const categoricalValueCounts = (stat) => {
-  if (variable.value === '') {
+  if (variable.value === "") {
     return alert("Please enter a variable name in the 'Load data' section.");
   } else if (column.value === "") {
       return alert("Please add a column name.");
@@ -143,6 +143,10 @@ let correlation = document.getElementById("correlation");
 let figure = document.getElementById("figure");
 let scatterX = document.getElementById("scatterX");
 let scatterY = document.getElementById("scatterY");
+let plots = document.getElementById("plots");
+let boxPlotAxis = document.getElementById("boxPlotAxis");
+let boxPlotCatergory = document.getElementById("boxPlotsCategory");
+let boxPlotCatergoryValue = document.getElementById("boxPlotCategoryValue");
 
 const matshow = (stat) => {
   if (correlation.value === "") {
@@ -156,22 +160,22 @@ const matshow = (stat) => {
 
 const scatters = (stat) => {
   if (variable.value === "") {
-    return alert('Please enter a variable name in the \'Load data\' section.');
+    return alert("Please enter a variable name in the 'Load data' section.");
   } else if (scatterX.value === "") {
-      return alert('Please enter a value in the \'scatter x\' field.');
+      return alert("Please enter a value in the 'scatter x' field.");
   } else if (scatterY.value === "") {
-      return alert('Please enter a value in the \'scatter y\' field.');
+      return alert("Please enter a value in the 'scatter y' field.");
   } else {
       return document.editor.textbox.value+='\n' + document.editor.variable.value + '.plot(kind=\'' + stat + '\', x=\'' + document.editor.scatterX.value + '\', y=\'' + document.editor.scatterY.value + '\', figsize=(6,6))';
   }
 }
 
 const boxPlot = () => {
-  if (variable.value === '') {
-    return alert('Please enter a variable name in the \'Load data\' section.');
-  } else if (plots.value === '') {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'Load data' section.");
+  } else if (plots.value === "") {
       return alert("Please enter at least one category into the 'boxplot categories' field.");
-  } else if (boxPlotAxis.value === '') {
+  } else if (boxPlotAxis.value === "") {
       return alert("Please enter a name in the 'boxplot axis' field.");
   } else {
       return document.editor.textbox.value+= '\n' + boxPlotAxis.value + ' = ' + document.editor.variable.value + '[[' + document.editor.boxplotCats.value.split(',').map(el => `'${el.replace(' ', '')}'`).join().replaceAll(',', ', ') + ']].boxplot(by=\'' + document.editor.boxplotCats.value.split(',')[document.editor.boxplotCats.value.split(',').length - 1].replace(' ', '') + '\', figsize=(14,6))\n' + boxPlotAxis.value + '.set_ylabel(\'' + document.editor.boxplotCats.value.split(',')[0] + '\')';
@@ -180,7 +184,7 @@ const boxPlot = () => {
 
 const boxPlotGrouped = () => {
   if (variable.value === '') {
-    return alert('Please enter a variable name in the \'Load data\' section.');
+    return alert("Please enter a variable name in the 'Load data' section.");
   } else if (boxPlotCategory.value === '') {
       return alert("Please enter a category in the 'category' field to the right.");
   } else if (boxPlotCategoryValue.value === '') {
@@ -199,7 +203,7 @@ const boxPlotGrouped = () => {
 const box = () => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'Load data' section.");
-  } else if (plots.value === '') {
+  } else if (plots.value === "") {
       return alert("Please enter at least one category into the 'boxplot categories' field.");
   } else {
       return document.editor.textbox.value+= '\n' + document.editor.variable.value + '[[' + document.editor.boxplotCats.value.split(',').map(el => `'${el.replace(' ', '')}'`) + ']].plot(kind=\'box\', subplots=True, layout=(2,3), figsize=(14,8))';
@@ -217,7 +221,7 @@ const columnWrangle = (stat) => {
   }
 
   if (variable.value === '') {
-    return alert('Please enter a variable name in the \'Load data\' section');
+    return alert("Please enter a variable name in the 'Load data' section");
   } else if (newColumn.value === "") {
       return alert("Please add a new column name.");
   } else if (columnA.value === "") {
@@ -265,5 +269,32 @@ const columnWrangleModify = (stat) => {
       return alert("Please add a valid number in the modify field to the right.");
   } else {
       document.editor.textbox.value+='\n' + variable.value + '[\'' + columnA.value + '\'] ' + stat + '= ' + modify.value + '\n' + variable.value + '[\'' + columnA.value + '\'].head()';
+  }
+}
+
+// Selection and indexing
+const individualSelection = () => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'Load data' section");
+  } else if (columnA.value === "") {
+      return alert("Please add a primary column name in the 'Column Wrangling' section.");
+  } else if (columnB.value === "") {
+      return alert("Please add a secondary column name in the 'Column Wrangling' section.");
+  } else {
+      document.editor.textbox.value+="\n" + variable.value + ".loc[" + variable.value + "['" + columnA.value + "'] == '" + columnB.value + "']" + "\n" + variable.value + "['" + columnA.value + "'].head()";
+  }
+}
+
+const groupSelectionMean = () => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'Load data' section");
+  } else if (columnA.value === "") {
+      return alert("Please add a primary column name in the 'Column Wrangling' section.");
+  } else if (groupA.value === "") {
+      return alert("Please add a category in group A.");
+  } else if (groupB.value === "") {
+      return alert("Please add a category in group B.");
+  } else {
+      document.editor.textbox.value+='\n' + variable.value + '.loc[' + variable.value + '[\'' + columnA.value + '\'] == \'' + groupA.value + '\', \'' + groupB.value + '\'].mean()';
   }
 }
