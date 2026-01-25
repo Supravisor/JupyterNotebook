@@ -31,7 +31,7 @@ const meanMedian = (stat) => {
   } else if (column.value === "") {
       return alert("Please add a column name in the 'Numerical analysis and visualisation' section.");
   } else {
-      document.editor.textbox.value+= '\n' + variable.value + '[\'' + column.value + '\'].' + stat + '()';
+      document.editor.textbox.value+= "\n" + variable.value + "['" + column.value + "']." + stat + "()";
   }
 }
 
@@ -143,6 +143,7 @@ let correlation = document.getElementById("correlation");
 let figure = document.getElementById("figure");
 let scatterX = document.getElementById("scatterX");
 let scatterY = document.getElementById("scatterY");
+let plots = document.getElementById("plots");
 
 const matshow = (stat) => {
   if (correlation.value === "") {
