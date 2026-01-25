@@ -41,9 +41,9 @@ const analyseBox = (stat) => {
   } else if (column.value === "") {
       return alert("Please add a column name in the 'Numerical analysis and visualisation' section.");
   } else if (axis.value !== "") {
-      document.editor.textbox.value+= '\n' + axis.value + ' = ' + variable.value + '[\'' + column.value + '\'].plot(kind=\'' + stat + '\', vert=False, figsize=(14,6))';
+      document.editor.textbox.value+= "\n" + axis.value + " = " + variable.value + "['" + column.value + "'].plot(kind='" + stat + "', vert=False, figsize=(14,6))";
   } else {
-      document.editor.textbox.value+= '\n' + variable.value + '[\'' + column.value + '\'].plot(kind=\'' + stat + '\', vert=False, figsize=(14,6))';
+      document.editor.textbox.value+= "\n" + variable.value + "['" + column.value + "'].plot(kind='" + stat + "', vert=False, figsize=(14,6))";
   }
 }
 
@@ -53,9 +53,9 @@ const densityHist = (stat) => {
   } else if (column.value === "") {
       return alert("Please add a column name in the 'Numerical analysis and visualisation' section.");
   } else if (axis.value !== "") {
-      document.editor.textbox.value+= '\n' + axis.value + ' = ' + variable.value + '[\'' + column.value + '\'].plot(kind=\'' + stat + '\', figsize=(14,6))';
+      document.editor.textbox.value+= "\n" + axis.value + " = " + variable.value + "['" + column.value + "'].plot(kind='" + stat + "', figsize=(14,6))";
   } else {
-      document.editor.textbox.value+= '\n' + variable.value + '[\'' + column.value + '\'].plot(kind=\'' + stat + '\', figsize=(14,6))';
+      document.editor.textbox.value+= "\n" + variable.value + "['" + column.value + "'].plot(kind='" + stat + "', figsize=(14,6))";
   }
 }
 
@@ -144,6 +144,7 @@ let figure = document.getElementById("figure");
 let scatterX = document.getElementById("scatterX");
 let scatterY = document.getElementById("scatterY");
 let plots = document.getElementById("plots");
+let boxPlotAxis = document.getElementById("boxPlotAxis");
 
 const matshow = (stat) => {
   if (correlation.value === "") {
