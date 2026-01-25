@@ -145,6 +145,7 @@ let scatterX = document.getElementById("scatterX");
 let scatterY = document.getElementById("scatterY");
 let plots = document.getElementById("plots");
 let boxPlotAxis = document.getElementById("boxPlotAxis");
+let boxPlotCatergory = document.getElementById("boxPlotsCategory");
 
 const matshow = (stat) => {
   if (correlation.value === "") {
