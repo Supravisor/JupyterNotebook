@@ -319,3 +319,15 @@ const meanSelection = () => {
       document.editor.textbox.value+="\n" + variable.value + ".loc[(" + variable.value + "['" + columnA.value + "'] == '" + groupA.value + "') & (" + variable.value + "['" + columnB.value + "'] == '" + groupB.value + "'), '" + newColumn.value + "'].mean()";
   }
 }
+
+const meanMaxSelection = () => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'Load data' section");
+  } else if (mostValueCounts.value === "") {
+      return alert("Please add a number in the 'Categorical analysis and visualisation' section.");
+  } else if (columnB.value === "") {
+      return alert("Please add a secondary column name in the 'Column Wrangling' section.");
+  } else {
+      document.editor.textbox.value+="\n" + variable.value + ".loc[" + variable.value + "['"   + columnA.value + "'] > " + mostValueCounts.value + ", '"   + columnB.value + "'].mean()";
+  }
+}
