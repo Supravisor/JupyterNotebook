@@ -348,3 +348,42 @@ const meanMinSelection = () => {
       document.editor.textbox.value+="\n" + variable.value + ".loc[" + variable.value + "['"   + columnA.value + "'] < " + mostValueCounts.value + ", '"   + columnB.value + "'].mean()";
   }
 }
+
+const percentageSelection = () => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'Load data' section");
+  } else if (columnA.value === "") {
+      return alert("Please add a primary column name in the 'Column Wrangling' section.");
+  } else if (groupA.value === "") {
+      return alert("Please add a category in group A.");
+  } else if (newColumn.value === "") {
+      return alert("Please add a new column name.");
+  } else if (selectionPercentage.value === "") {
+      return alert("Please select a percentage.");
+  } else {
+      let percentage = selectionPercentage.value;
+      let percentageNegative = false;
+      if (parseFloat(percentage) < 0 ) {
+         percentageNegative = true;
+         let negative = Math.abs(percentage);
+         percentage = percentage.replace("-", "");
+      }
+
+      if (!percentage.includes(".")) {
+        percentage = parseFloat(percentage);
+        if (parseFloat(percentage) > 0 && parseFloat(percentage) < 10 ) {
+          percentage = "0.0" + percentage;
+        } else if (parseFloat(percentage) < 100 ) {
+            percentage = "0." + percentage;
+        } else {
+            percentage = parseFloat(percentage) / 100;
+        }
+      }
+
+      if (percentageNegative) {
+        percentage = "-" + percentage;
+      }
+
+      document.editor.textbox.value+="\n" + variable.value + ".loc[" + variable.value + "['" + columnA.value + "'] == '" + groupA.value + "', '" + newColumn.value + "'] *= " + percentage;
+  }
+}
