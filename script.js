@@ -147,7 +147,8 @@ let plots = document.getElementById("plots");
 let boxPlotAxis = document.getElementById("boxPlotAxis");
 let boxPlotCatergory = document.getElementById("boxPlotsCategory");
 let boxPlotCatergoryValue = document.getElementById("boxPlotCategoryValue");
-let boxPlotCatergoryColumnA = document.getElementById("boxPlotCategoryColumnA");
+let boxPlotCategoryColumnA = document.getElementById("boxPlotCategoryColumnA");
+let boxPlotCategoryColumnB = document.getElementById("boxPlotCategoryColumnB");
 
 const matshow = (stat) => {
   if (correlation.value === "") {
