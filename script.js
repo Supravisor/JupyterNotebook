@@ -387,3 +387,11 @@ const percentageSelection = () => {
       document.editor.textbox.value+="\n" + variable.value + ".loc[" + variable.value + "['" + columnA.value + "'] == '" + groupA.value + "', '" + newColumn.value + "'] *= " + percentage;
   }
 }
+
+const maxSelection = () => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'Load data' section");
+  } else {
+      document.editor.textbox.value+="\n" + variable.value + ".loc[" + variable.value + "['"   + columnA.value + "'] == " + variable.value + "['"   + columnA.value + "'].max()]";
+  }
+}
