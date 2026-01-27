@@ -330,6 +330,8 @@ const meanMaxSelection = () => {
     return alert("Please enter a variable name in the 'Load data' section");
   } else if (mostValueCounts.value === "") {
       return alert("Please add a number in the 'Categorical analysis and visualisation' section.");
+  } else if (columnA.value === "") {
+      return alert("Please add a primary column name in the 'Column Wrangling' section.");
   } else if (columnB.value === "") {
       return alert("Please add a secondary column name in the 'Column Wrangling' section.");
   } else {
