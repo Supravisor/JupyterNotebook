@@ -147,6 +147,14 @@ let plots = document.getElementById("plots");
 let boxPlotAxis = document.getElementById("boxPlotAxis");
 let boxPlotCatergory = document.getElementById("boxPlotsCategory");
 let boxPlotCatergoryValue = document.getElementById("boxPlotCategoryValue");
+let boxPlotCategoryColumnA = document.getElementById("boxPlotCategoryColumnA");
+let boxPlotCategoryColumnB = document.getElementById("boxPlotCategoryColumnB");
+let label = document.getElementById("label");
+let newColumn = document.getElementById("newColumn");
+let columnA = document.getElementById("columnA");
+let columnB = document.getElementById("columnB");
+let groupA = document.getElementById("groupA");
+let groupB = document.getElementById("groupB");
 
 const matshow = (stat) => {
   if (correlation.value === "") {
@@ -296,5 +304,134 @@ const groupSelectionMean = () => {
       return alert("Please add a category in group B.");
   } else {
       document.editor.textbox.value+='\n' + variable.value + '.loc[' + variable.value + '[\'' + columnA.value + '\'] == \'' + groupA.value + '\', \'' + groupB.value + '\'].mean()';
+  }
+}
+
+const meanSelection = () => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'Load data' section");
+  } else if (columnA.value === "") {
+      return alert("Please add a primary column name in the 'Column Wrangling' section.");
+  } else if (groupA.value === "") {
+      return alert("Please add a category in group A.");
+  } else if (columnB.value === "") {
+      return alert("Please add a secondary column name in the 'Column Wrangling' section.");
+  } else if (groupB.value === "") {
+      return alert("Please add a category in group B.");
+  } else if (newColumn.value === "") {
+      return alert("Please add a new column name.");
+  } else {
+      document.editor.textbox.value+="\n" + variable.value + ".loc[(" + variable.value + "['" + columnA.value + "'] == '" + groupA.value + "') & (" + variable.value + "['" + columnB.value + "'] == '" + groupB.value + "'), '" + newColumn.value + "'].mean()";
+  }
+}
+
+const meanMaxSelection = () => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'Load data' section");
+  } else if (mostValueCounts.value === "") {
+      return alert("Please add a number in the 'Categorical analysis and visualisation' section.");
+  } else if (columnA.value === "") {
+      return alert("Please add a primary column name in the 'Column Wrangling' section.");
+  } else if (columnB.value === "") {
+      return alert("Please add a secondary column name in the 'Column Wrangling' section.");
+  } else {
+      document.editor.textbox.value+="\n" + variable.value + ".loc[" + variable.value + "['"   + columnA.value + "'] > " + mostValueCounts.value + ", '"   + columnB.value + "'].mean()";
+  }
+}
+
+const meanMinSelection = () => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'Load data' section");
+  } else if (mostValueCounts.value === "") {
+      return alert("Please add a number in the 'Categorical analysis and visualisation' section.");
+  } else if (columnB.value === "") {
+      return alert("Please add a secondary column name in the 'Column Wrangling' section.");
+  } else {
+      document.editor.textbox.value+="\n" + variable.value + ".loc[" + variable.value + "['"   + columnA.value + "'] < " + mostValueCounts.value + ", '"   + columnB.value + "'].mean()";
+  }
+}
+
+const percentageSelection = () => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'Load data' section");
+  } else if (columnA.value === "") {
+      return alert("Please add a primary column name in the 'Column Wrangling' section.");
+  } else if (groupA.value === "") {
+      return alert("Please add a category in group A.");
+  } else if (newColumn.value === "") {
+      return alert("Please add a new column name.");
+  } else if (selectionPercentage.value === "") {
+      return alert("Please select a percentage.");
+  } else {
+      let percentage = selectionPercentage.value;
+      let percentageNegative = false;
+      if (parseFloat(percentage) < 0 ) {
+         percentageNegative = true;
+         let negative = Math.abs(percentage);
+         percentage = percentage.replace("-", "");
+      }
+
+      if (!percentage.includes(".")) {
+        percentage = parseFloat(percentage);
+        if (parseFloat(percentage) > 0 && parseFloat(percentage) < 10 ) {
+          percentage = "0.0" + percentage;
+        } else if (parseFloat(percentage) < 100 ) {
+            percentage = "0." + percentage;
+        } else {
+            percentage = parseFloat(percentage) / 100;
+        }
+      }
+
+      if (percentageNegative) {
+        percentage = "-" + percentage;
+      }
+
+      document.editor.textbox.value+="\n" + variable.value + ".loc[" + variable.value + "['" + columnA.value + "'] == '" + groupA.value + "', '" + newColumn.value + "'] *= " + percentage;
+  }
+}
+
+const maxSelection = () => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'Load data' section");
+  } else {
+      document.editor.textbox.value+="\n" + variable.value + ".loc[" + variable.value + "['"   + columnA.value + "'] == " + variable.value + "['"   + columnA.value + "'].max()]";
+  }
+}
+
+const sort = () => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'Load data' section");
+  } else if (mostValueCounts.value === "") {
+      return alert("Please add a number in the 'Categorical analysis and visualisation' section.");
+  } else {
+      document.editor.textbox.value+="\n" + variable.value + ".sort_values(['" + columnA.value + "'], ascending=False).head(" + mostValueCounts.value + ")";
+  }
+}
+
+const valueCountSelection = () => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'Load data' section");
+  } else if (columnA.value === "") {
+      return alert("Please add a primary column name in the 'Column Wrangling' section.");
+  } else if (groupA.value === "") {
+      return alert("Please add a category in group A.");
+  } else if (newColumn.value === "") {
+      return alert("Please add a new column name.");
+  } else if (selectionPercentage.value === "") {
+      return alert("Please select a percentage.");
+  } else {
+      document.editor.textbox.value+="\n" + variable.value + ".loc[" + variable.value + "['" + columnA.value + "'] == '" + groupA.value + "', '" + newColumn.value + "'].value_counts()";
+  }
+}
+
+const numberSelectionSingle = () => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'Load data' section");
+  } else if (columnA.value === "") {
+      return alert("Please add a primary column name in the 'Column Wrangling' section.");
+  } else if (groupA.value === "") {
+      return alert("Please add a category in group A.");
+  } else {
+      document.editor.textbox.value+="\n" + variable.value + ".loc[(" + variable.value + "['" + columnA.value + "'] == '" + groupA.value + "')].shape[0]";
   }
 }

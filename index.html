@@ -211,6 +211,29 @@
   <input type="button" class="btn btn-column" value="group selection mean" onclick="groupSelectionMean();" />
 </p>
 
+<p>
+  <h3>Mean</h3>
+  <input type="button" class="btn btn-column" value="mean" onclick="meanSelection();" />
+  <input type="button" class="btn btn-column" value="mean (max)" onclick="meanMaxSelection();" />
+  <input type="button" class="btn btn-column" value="mean (min)" onclick="meanMinSelection();" />
+</p>
+
+<p>
+  <input type="button" class="btn btn-column" value="percentage change" onclick="percentageSelection();" />
+  <input class="btn" name="selectionPercentage" id="selectionPercentage" placeholder="percentage" type="number" />
+</p>
+
+<p>
+  <input type="button" class="btn btn-column" value="max" onclick="maxSelection();" />
+  <input type="button" class="btn btn-column" value="sort" onclick="sort();" />
+  <input type="button" class="btn btn-column" value="value count" onclick="valueCountSelection();" />
+</p>
+
+<p>
+  <h3>Same category</h3>
+  <input type="button" class="btn btn-column" value="number of records (single)" onclick="numberSelectionSingle();" />
+</p>
+
   <textarea id="load-data" class="hide">
 conn = sqlite3.connect('data/sakila.db')
 
