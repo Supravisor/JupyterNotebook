@@ -231,7 +231,7 @@ const columnWrangle = (stat) => {
   if (variable.value === '') {
     return alert("Please enter a variable name in the 'Load data' section");
   } else if (newColumn.value === "") {
-      return alert("Please add a new column name.");
+      return alert("Please add a column name in the 'new column' field in the 'Column Wrangling' section.");
   } else if (columnA.value === "") {
       return alert("Please add a primary column name in the 'Column Wrangling' section.");
   } else if (columnB.value === "") {
@@ -245,7 +245,7 @@ const columnPlot = (stat) => {
   if (variable.value === "") {
       return alert("Please enter a variable name in the 'Load data' section");
   } else if (newColumn.value === "") {
-      return alert("Please add a new column name.");
+      return alert("Please add a column name in the 'new column' field in the 'Column Wrangling' section.");
   } else {
       document.editor.textbox.value+='\n' + variable.value + '[\'' + newColumn.value + '\'].plot(kind=\'' + stat + '\', figsize=(14,6))';
   }
@@ -319,7 +319,7 @@ const meanSelection = () => {
   } else if (groupB.value === "") {
       return alert("Please add a category in group B.");
   } else if (newColumn.value === "") {
-      return alert("Please add a new column name.");
+      return alert("Please add a column name in the 'new column' field in the 'Column Wrangling' section.");
   } else {
       document.editor.textbox.value+="\n" + variable.value + ".loc[(" + variable.value + "['" + columnA.value + "'] == '" + groupA.value + "') & (" + variable.value + "['" + columnB.value + "'] == '" + groupB.value + "'), '" + newColumn.value + "'].mean()";
   }
@@ -416,7 +416,7 @@ const valueCountSelection = () => {
   } else if (groupA.value === "") {
       return alert("Please add a category in group A.");
   } else if (newColumn.value === "") {
-      return alert("Please add a new column name.");
+      return alert("Please add a column name in the 'new column' field in the 'Column Wrangling' section.");
   } else if (selectionPercentage.value === "") {
       return alert("Please select a percentage.");
   } else {
