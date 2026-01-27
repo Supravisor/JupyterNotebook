@@ -9,6 +9,10 @@ h1 {
   text-align: center;
 }
 
+h3 {
+  margin-left: 2em;
+}
+
 #buttons, #preview {
   width: 38vw;
   border: 3px solid black;
