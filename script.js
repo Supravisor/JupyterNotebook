@@ -151,6 +151,7 @@ let boxPlotCategoryColumnA = document.getElementById("boxPlotCategoryColumnA");
 let boxPlotCategoryColumnB = document.getElementById("boxPlotCategoryColumnB");
 let label = document.getElementById("label");
 let newColumn = document.getElementById("newColumn");
+let columnA = document.getElementById("columnA");
 
 const matshow = (stat) => {
   if (correlation.value === "") {
