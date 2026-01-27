@@ -435,3 +435,17 @@ const numberSelectionSingle = () => {
       document.editor.textbox.value+="\n" + variable.value + ".loc[(" + variable.value + "['" + columnA.value + "'] == '" + groupA.value + "')].shape[0]";
   }
 }
+
+const numberSelectionDoubleSame = () => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'Load data' section");
+  } else if (columnA.value === "") {
+      return alert("Please add a primary column name in the 'Column Wrangling' section.");
+  } else if (groupA.value === "") {
+      return alert("Please add a category in group A.");
+  } else if (groupB.value === "") {
+      return alert("Please add a category in group B.");
+  } else {
+      document.editor.textbox.value+="\n" + variable.value + ".loc[(" + variable.value + "[" + columnA.value + "'] == '" + groupA.value + "') " + selectionGrouping.value +  " (" + variable.value + "['" + columnA.value + "'] == '" + groupB.value + "')].shape[0]";
+  }
+}
