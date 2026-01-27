@@ -359,7 +359,7 @@ const percentageSelection = () => {
   } else if (groupA.value === "") {
       return alert("Please add a category in group A.");
   } else if (newColumn.value === "") {
-      return alert("Please add a new column name.");
+      return alert("Please add a column name in the 'new column' field in the 'Column Wrangling' section.");
   } else if (selectionPercentage.value === "") {
       return alert("Please select a percentage.");
   } else {
