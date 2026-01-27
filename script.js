@@ -153,6 +153,7 @@ let label = document.getElementById("label");
 let newColumn = document.getElementById("newColumn");
 let columnA = document.getElementById("columnA");
 let columnB = document.getElementById("columnB");
+let groupA = document.getElementById("groupA");
 
 const matshow = (stat) => {
   if (correlation.value === "") {
