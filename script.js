@@ -395,3 +395,13 @@ const maxSelection = () => {
       document.editor.textbox.value+="\n" + variable.value + ".loc[" + variable.value + "['"   + columnA.value + "'] == " + variable.value + "['"   + columnA.value + "'].max()]";
   }
 }
+
+const sort = () => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'Load data' section");
+  } else if (mostValueCounts.value === "") {
+      return alert("Please add a number in the 'Categorical analysis and visualisation' section.");
+  } else {
+      document.editor.textbox.value+="\n" + variable.value + ".sort_values(['" + columnA.value + "'], ascending=False).head(" + mostValueCounts.value + ")";
+  }
+}
