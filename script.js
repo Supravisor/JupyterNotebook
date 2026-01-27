@@ -405,3 +405,19 @@ const sort = () => {
       document.editor.textbox.value+="\n" + variable.value + ".sort_values(['" + columnA.value + "'], ascending=False).head(" + mostValueCounts.value + ")";
   }
 }
+
+const valueCountSelection = () => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'Load data' section");
+  } else if (columnA.value === "") {
+      return alert("Please add a primary column name in the 'Column Wrangling' section.");
+  } else if (groupA.value === "") {
+      return alert("Please add a category in group A.");
+  } else if (newColumn.value === "") {
+      return alert("Please add a new column name.");
+  } else if (selectionPercentage.value === "") {
+      return alert("Please select a percentage.");
+  } else {
+      document.editor.textbox.value+="\n" + variable.value + ".loc[" + variable.value + "['" + columnA.value + "'] == '" + groupA.value + "', '" + newColumn.value + "'].value_counts()";
+  }
+}
