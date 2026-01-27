@@ -300,3 +300,21 @@ const groupSelectionMean = () => {
       document.editor.textbox.value+='\n' + variable.value + '.loc[' + variable.value + '[\'' + columnA.value + '\'] == \'' + groupA.value + '\', \'' + groupB.value + '\'].mean()';
   }
 }
+
+const meanSelection = () => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'Load data' section");
+  } else if (columnA.value === "") {
+      return alert("Please add a primary column name in the 'Column Wrangling' section.");
+  } else if (groupA.value === "") {
+      return alert("Please add a category in group A.");
+  } else if (columnB.value === "") {
+      return alert("Please add a secondary column name in the 'Column Wrangling' section.");
+  } else if (groupB.value === "") {
+      return alert("Please add a category in group B.");
+  } else if (newColumn.value === "") {
+      return alert("Please add a new column name.");
+  } else {
+      document.editor.textbox.value+="\n" + variable.value + ".loc[(" + variable.value + "['" + columnA.value + "'] == '" + groupA.value + "') & (" + variable.value + "['" + columnB.value + "'] == '" + groupB.value + "'), '" + newColumn.value + "'].mean()";
+  }
+}
