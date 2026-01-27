@@ -154,6 +154,7 @@ let newColumn = document.getElementById("newColumn");
 let columnA = document.getElementById("columnA");
 let columnB = document.getElementById("columnB");
 let groupA = document.getElementById("groupA");
+let groupB = document.getElementById("groupB");
 
 const matshow = (stat) => {
   if (correlation.value === "") {
