@@ -506,10 +506,22 @@ let dateColumn = document.getElementById("dateColumn");
 
 const date = () => {
   if (variable.value === "") {
-    return alert("Please enter a variable name in the 'Load data' section");
+    return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section.");
   } else if (dateColumn.value === "") {
-      return alert("Please enter a date in the 'date' field to the right, in the 'Date' section.");
+      return alert("Please enter a date in the 'date column' field, in the 'Date' section.");
   } else {
       document.editor.textbox.value+="\n" + variable.value + "['" + dateColumn.value + "'] = " + variable.value + "[['Year', 'Month', 'Day']].apply(lambda x: '{}-{}-{}'.format(x[0], x[1], x[2]), axis=1)";
+  }
+}
+
+const dateDiff = () => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section.");
+  } else if (dateNewColumn.value === '') {
+    return alert("Please enter a new column name in the 'new column' field, in the 'Date' section.");
+  } else if (dateColumn.value.split(",").length !== 2) {
+      return alert("Please enter two dates in the 'date column' field, in the 'Date' section.");
+  } else {
+      document.editor.textbox.value+="\n" + variable.value + "['" + dateNewColumn.value + "'] = " + variable.value + "[[" + dateColumn.value.split(',').map(el => `'${el.replace(' ', '')}'`) + "]].apply(lambda x: (x[1] - x[0]).days, axis=1)";
   }
 }
