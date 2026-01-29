@@ -184,7 +184,7 @@ const boxPlot = () => {
   } else if (plots.value === "") {
       return alert("Please enter at least one category into the 'boxplot categories' field, in the 'Correlation between columns' section.");
   } else if (boxPlotAxis.value === "") {
-      return alert("Please enter a name in the 'boxplot axis' field.");
+      return alert("Please enter a name in the 'boxplot axis' field, in the 'Correlation between columns' section.");
   } else {
       return document.editor.textbox.value+="\n" + boxPlotAxis.value + " = " + document.editor.variable.value + "[[" + document.editor.boxplotCats.value.split(',').map(el => `'${el.replace(' ', '')}'`).join().replaceAll(',', ', ') + "]].boxplot(by='" + document.editor.boxplotCats.value.split(',')[document.editor.boxplotCats.value.split(',').length - 1].replace(' ', '') + "', figsize=(14,6))\n" + boxPlotAxis.value + ".set_ylabel('" + document.editor.boxplotCats.value.split(',')[0] + "')";
   }
@@ -202,7 +202,7 @@ const boxPlotGrouped = () => {
   } else if (boxPlotCategoryColumnB.value === '') {
       return alert("Please enter a category in the 'column B' field to the right.");
   } else if (boxPlotAxis.value === '') {
-      return alert("Please enter a name in the 'boxplot axis' field.");
+      return alert("Please enter a name in the 'boxplot axis' field, in the 'Correlation between columns' section.");
   } else {
       return document.editor.textbox.value+= "\n" + boxPlotAxis.value + " = " + variable.value + ".loc[" + variable.value + "['" + boxPlotCategory.value + "'] == " + boxPlotCategoryValue.value + ", ['" + boxPlotCategoryColumnA.value + "', '" + boxPlotCategoryColumnB.value + "']]" + "\n" + boxPlotAxis.value + ".boxplot(by='" + boxPlotCategoryColumnB.value + "', figsize=(14,6))";
   }
