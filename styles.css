@@ -95,6 +95,10 @@ td {
   border-color: chocolate;
 }
 
+.btn-primary, .btn-success, .btn-data {
+  color: white;
+}
+
 .hide {
   display: none;
 }
@@ -114,4 +118,8 @@ input {
 
 input:not([type:"button"]) {
   border-color: black;
+}
+
+#selectionPercentage {
+  width: 85px;
 }
