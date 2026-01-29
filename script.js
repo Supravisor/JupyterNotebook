@@ -5,7 +5,7 @@ let loadData = document.getElementById("load-data");
 
 const data = (stat) => {
   if (variable.value === "") {
-    return alert("Please enter a variable name in the 'Load data' section");
+    return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else {
       document.editor.textbox.value+= "\n" + document.editor.variable.value + "." + stat;
   }
@@ -19,7 +19,7 @@ let mostValueCounts = document.getElementById("mostValueCounts");
 
 const describe = (stat) => {
   if (variable.value === "") {
-    return alert("Please enter a variable name in the 'Load data' section");
+    return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else {
       document.editor.textbox.value+= column.value === "" ? "\n" + document.editor.variable.value + "." + stat + "()\n" : "\n" + document.editor.variable.value + "['" + document.editor.column.value + "']." + stat + "()\n";
   }
@@ -27,7 +27,7 @@ const describe = (stat) => {
 
 const meanMedian = (stat) => {
   if (variable.value === "") {
-    return alert("Please enter a variable name in the 'Load data' section");
+    return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (column.value === "") {
       return alert("Please add a column name in the 'Numerical analysis and visualisation' section.");
   } else {
@@ -37,7 +37,7 @@ const meanMedian = (stat) => {
 
 const analyseBox = (stat) => {
   if (variable.value === "") {
-    return alert("Please enter a variable name in the 'Load data' section.");
+    return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (column.value === "") {
       return alert("Please add a column name in the 'Numerical analysis and visualisation' section.");
   } else if (axis.value !== "") {
@@ -49,7 +49,7 @@ const analyseBox = (stat) => {
 
 const densityHist = (stat) => {
   if (variable.value === "") {
-    return alert("Please enter a variable name in the 'Load data' section.");
+    return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (column.value === "") {
       return alert("Please add a column name in the 'Numerical analysis and visualisation' section.");
   } else if (axis.value !== "") {
@@ -61,7 +61,7 @@ const densityHist = (stat) => {
 
 const colour = () => {
   if (variable.value === "") {
-    return alert("Please enter a variable name in the 'Load data' section.");
+    return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (analysis === undefined) {
       return alert("Please select an analysis type.");
   } else if (column.value === "") {
@@ -95,7 +95,7 @@ const axisLabel = (stat) => {
 // Categorical analysis and visualisation
 const categoricalValueCounts = (stat) => {
   if (variable.value === "") {
-    return alert("Please enter a variable name in the 'Load data' section.");
+    return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (column.value === "") {
       return alert("Please add a column name.");
   } else {
@@ -110,7 +110,7 @@ const categoricalValueCounts = (stat) => {
 
 const categoricalBar = (stat) => {
   if (variable.value === "") {
-    return alert("Please enter a variable name in the 'Load data' section.");
+    return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (column.value === "") {
       return alert("Please add a column name.");
   } else {
@@ -125,7 +125,7 @@ const categoricalBar = (stat) => {
 
 const categoricalPie = (stat) => {
   if (variable.value === "") {
-    return alert("Please enter a variable name in the 'Load data' section.");
+    return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (column.value === "") {
       return alert("Please add a column name.");
   } else {
@@ -168,7 +168,7 @@ const matshow = (stat) => {
 
 const scatters = (stat) => {
   if (variable.value === "") {
-    return alert("Please enter a variable name in the 'Load data' section.");
+    return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (scatterX.value === "") {
       return alert("Please enter a value in the 'scatter x' field.");
   } else if (scatterY.value === "") {
@@ -180,7 +180,7 @@ const scatters = (stat) => {
 
 const boxPlot = () => {
   if (variable.value === "") {
-    return alert("Please enter a variable name in the 'Load data' section.");
+    return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (plots.value === "") {
       return alert("Please enter at least one category into the 'boxplot categories' field.");
   } else if (boxPlotAxis.value === "") {
@@ -192,7 +192,7 @@ const boxPlot = () => {
 
 const boxPlotGrouped = () => {
   if (variable.value === '') {
-    return alert("Please enter a variable name in the 'Load data' section.");
+    return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (boxPlotCategory.value === '') {
       return alert("Please enter a category in the 'category' field to the right.");
   } else if (boxPlotCategoryValue.value === '') {
@@ -210,7 +210,7 @@ const boxPlotGrouped = () => {
 
 const box = () => {
   if (variable.value === "") {
-    return alert("Please enter a variable name in the 'Load data' section.");
+    return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (plots.value === "") {
       return alert("Please enter at least one category into the 'boxplot categories' field.");
   } else {
@@ -229,7 +229,7 @@ const columnWrangle = (stat) => {
   }
 
   if (variable.value === '') {
-    return alert("Please enter a variable name in the 'Load data' section");
+    return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (newColumn.value === "") {
       return alert("Please add a column name in the 'new column' field in the 'Column Wrangling' section.");
   } else if (columnA.value === "") {
@@ -243,7 +243,7 @@ const columnWrangle = (stat) => {
 
 const columnPlot = (stat) => {
   if (variable.value === "") {
-      return alert("Please enter a variable name in the 'Load data' section");
+      return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (newColumn.value === "") {
       return alert("Please add a column name in the 'new column' field in the 'Column Wrangling' section.");
   } else {
@@ -268,7 +268,7 @@ let modify = document.getElementById("modify");
 
 const columnWrangleModify = (stat) => {
   if (variable.value === "") {
-    return alert("Please enter a variable name in the 'Load data' section");
+    return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (columnA.value === "") {
       return alert("Please add a primary column name in the 'Column Wrangling' section.");
   } else if (modify.value === "") {
@@ -283,7 +283,7 @@ const columnWrangleModify = (stat) => {
 // Selection and indexing
 const individualSelection = () => {
   if (variable.value === "") {
-    return alert("Please enter a variable name in the 'Load data' section");
+    return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (columnA.value === "") {
       return alert("Please add a primary column name in the 'Column Wrangling' section.");
   } else if (columnB.value === "") {
@@ -295,7 +295,7 @@ const individualSelection = () => {
 
 const groupSelectionMean = () => {
   if (variable.value === "") {
-    return alert("Please enter a variable name in the 'Load data' section");
+    return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (columnA.value === "") {
       return alert("Please add a primary column name in the 'Column Wrangling' section.");
   } else if (groupA.value === "") {
@@ -309,7 +309,7 @@ const groupSelectionMean = () => {
 
 const meanSelection = () => {
   if (variable.value === "") {
-    return alert("Please enter a variable name in the 'Load data' section");
+    return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (columnA.value === "") {
       return alert("Please add a primary column name in the 'Column Wrangling' section.");
   } else if (groupA.value === "") {
@@ -327,7 +327,7 @@ const meanSelection = () => {
 
 const meanMaxSelection = () => {
   if (variable.value === "") {
-    return alert("Please enter a variable name in the 'Load data' section");
+    return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (mostValueCounts.value === "") {
       return alert("Please add a number in the 'Categorical analysis and visualisation' section.");
   } else if (columnA.value === "") {
@@ -341,7 +341,7 @@ const meanMaxSelection = () => {
 
 const meanMinSelection = () => {
   if (variable.value === "") {
-    return alert("Please enter a variable name in the 'Load data' section");
+    return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (mostValueCounts.value === "") {
       return alert("Please add a number in the 'Categorical analysis and visualisation' section.");
   } else if (columnB.value === "") {
@@ -353,7 +353,7 @@ const meanMinSelection = () => {
 
 const percentageSelection = () => {
   if (variable.value === "") {
-    return alert("Please enter a variable name in the 'Load data' section");
+    return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (columnA.value === "") {
       return alert("Please add a primary column name in the 'Column Wrangling' section.");
   } else if (groupA.value === "") {
@@ -392,7 +392,7 @@ const percentageSelection = () => {
 
 const maxSelection = () => {
   if (variable.value === "") {
-    return alert("Please enter a variable name in the 'Load data' section");
+    return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else {
       document.editor.textbox.value+="\n" + variable.value + ".loc[" + variable.value + "['"   + columnA.value + "'] == " + variable.value + "['"   + columnA.value + "'].max()]";
   }
@@ -400,7 +400,7 @@ const maxSelection = () => {
 
 const sort = () => {
   if (variable.value === "") {
-    return alert("Please enter a variable name in the 'Load data' section");
+    return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (mostValueCounts.value === "") {
       return alert("Please add a number in the 'Categorical analysis and visualisation' section.");
   } else {
@@ -410,7 +410,7 @@ const sort = () => {
 
 const valueCountSelection = () => {
   if (variable.value === "") {
-    return alert("Please enter a variable name in the 'Load data' section");
+    return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (columnA.value === "") {
       return alert("Please add a primary column name in the 'Column Wrangling' section.");
   } else if (groupA.value === "") {
@@ -426,7 +426,7 @@ const valueCountSelection = () => {
 
 const numberSelectionSingle = () => {
   if (variable.value === "") {
-    return alert("Please enter a variable name in the 'Load data' section");
+    return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (columnA.value === "") {
       return alert("Please add a primary column name in the 'Column Wrangling' section.");
   } else if (groupA.value === "") {
@@ -438,7 +438,7 @@ const numberSelectionSingle = () => {
 
 const numberSelectionDoubleSame = () => {
   if (variable.value === "") {
-    return alert("Please enter a variable name in the 'Load data' section");
+    return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (columnA.value === "") {
       return alert("Please add a primary column name in the 'Column Wrangling' section.");
   } else if (groupA.value === "") {
@@ -452,7 +452,7 @@ const numberSelectionDoubleSame = () => {
 
 const numberSelectionDoubleDiff = () => {
   if (variable.value === "") {
-    return alert("Please enter a variable name in the 'Load data' section");
+    return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (columnA.value === "") {
       return alert("Please add a primary column name in the 'Column Wrangling' section.");
   } else if (columnB.value === "") {
@@ -468,7 +468,7 @@ const numberSelectionDoubleDiff = () => {
 
 const numberSelectionDoubleDiffIsIn = () => {
   if (variable.value === "") {
-    return alert("Please enter a variable name in the 'Load data' section");
+    return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (columnA.value === "") {
       return alert("Please add a primary column name in the 'Column Wrangling' section.");
   } else if (columnB.value === "") {
