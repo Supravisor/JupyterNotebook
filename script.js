@@ -67,7 +67,7 @@ const colour = () => {
   } else if (column.value === "") {
       return alert("Please add a column name in the 'column' field, in the 'Numerical analysis and visualisation' section.");
   } else if (axis.value === "") {
-      return alert("Please add an axis name in the 'Numerical analysis and visualisation' section.");
+      return alert("Please enter an axis name in the 'axis' field, in the 'Numerical analysis and visualisation' section.");
   } else {
       document.editor.textbox.value+='\n' + document.editor.axis.value + '.axvline(' + document.editor.variable.value + '[\'' + document.editor.column.value + '\'].' + analysis + '(), color=\'' + document.editor.colours.value + '\')'
   }
@@ -84,7 +84,7 @@ const round = () => {
 
 const axisLabel = (stat) => {
   if (axis.value === "") {
-      return alert("Please enter an axis name in the axis field.");
+      return alert("Please enter an axis name in the 'axis' field, in the 'Numerical analysis and visualisation' section.");
   } else if (label.value === '') {
     return alert("Please enter a label name in the label field to the right.");
   } else {
