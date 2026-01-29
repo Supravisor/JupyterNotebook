@@ -198,9 +198,9 @@ const boxPlotGrouped = () => {
   } else if (boxPlotCategoryValue.value === '') {
       return alert("Please enter a category value in the 'value' field to the right.");
   } else if (boxPlotCategoryColumnA.value === '') {
-      return alert("Please enter a category in the 'column A' field to the right.");
+      return alert("Please enter a category in the 'column A' field, in the 'Correlation between columns' section.");
   } else if (boxPlotCategoryColumnB.value === '') {
-      return alert("Please enter a category in the 'column B' field to the right.");
+      return alert("Please enter a category in the 'column B' field, in the 'Correlation between columns' section.");
   } else if (boxPlotAxis.value === '') {
       return alert("Please enter a name in the 'boxplot axis' field, in the 'Correlation between columns' section.");
   } else {
