@@ -75,7 +75,7 @@ const colour = () => {
 
 const round = () => {
   if (mostValueCounts.value === "") {
-    return alert("Please add a number in the 'Categorical analysis and visualisation' section.");
+    return alert("Please add a number in the 'number' field, in the 'Categorical analysis and visualisation' section.");
   } else {
     
       document.editor.textbox.value+='.round(' + mostValueCounts.value + ')';
@@ -329,7 +329,7 @@ const meanMaxSelection = () => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (mostValueCounts.value === "") {
-      return alert("Please add a number in the 'Categorical analysis and visualisation' section.");
+      return alert("Please add a number in the 'number' field, in the 'Categorical analysis and visualisation' section.");
   } else if (columnA.value === "") {
       return alert("Please add a primary column name in the 'Column Wrangling' section.");
   } else if (columnB.value === "") {
@@ -343,7 +343,7 @@ const meanMinSelection = () => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (mostValueCounts.value === "") {
-      return alert("Please add a number in the 'Categorical analysis and visualisation' section.");
+      return alert("Please add a number in the 'number' field, in the 'Categorical analysis and visualisation' section.");
   } else if (columnB.value === "") {
       return alert("Please add a secondary column name in the 'Column Wrangling' section.");
   } else {
@@ -402,7 +402,7 @@ const sort = () => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (mostValueCounts.value === "") {
-      return alert("Please add a number in the 'Categorical analysis and visualisation' section.");
+      return alert("Please add a number in the 'number' field, in the 'Categorical analysis and visualisation' section.");
   } else {
       document.editor.textbox.value+="\n" + variable.value + ".sort_values(['" + columnA.value + "'], ascending=False).head(" + mostValueCounts.value + ")";
   }
