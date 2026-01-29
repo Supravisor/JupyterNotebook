@@ -503,3 +503,13 @@ const numberSelectionDoubleDiffIsIn = () => {
 
 // Dates
 let dateColumn = document.getElementById("dateColumn");
+
+const date = () => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'Load data' section");
+  } else if (dateColumn.value === "") {
+      return alert("Please enter a date in the 'date' field to the right, in the 'Date' section.");
+  } else {
+      document.editor.textbox.value+="\n" + variable.value + "['" + dateColumn.value + "'] = " + variable.value + "[['Year', 'Month', 'Day']].apply(lambda x: '{}-{}-{}'.format(x[0], x[1], x[2]), axis=1)";
+  }
+}
