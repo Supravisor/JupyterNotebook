@@ -301,7 +301,7 @@ const groupSelectionMean = () => {
   } else if (groupA.value === "") {
       return alert("Please add a category in 'group A' field, in the 'Different category' subsection.");
   } else if (groupB.value === "") {
-      return alert("Please add a category in group B.");
+      return alert("Please add a category in 'group B' field, in the 'Different category' subsection.");
   } else {
       document.editor.textbox.value+="\n" + variable.value + ".loc[" + variable.value + "['" + columnA.value + "'] == '" + groupA.value + "', '" + groupB.value + "'].mean()";
   }
@@ -317,7 +317,7 @@ const meanSelection = () => {
   } else if (columnB.value === "") {
       return alert("Please add a secondary column name in the 'secondary column' field, in the 'Column Wrangling' section.");
   } else if (groupB.value === "") {
-      return alert("Please add a category in group B.");
+      return alert("Please add a category in 'group B' field, in the 'Different category' subsection.");
   } else if (newColumn.value === "") {
       return alert("Please add a column name in the 'new column' field in the 'Column Wrangling' section.");
   } else {
@@ -444,7 +444,7 @@ const numberSelectionDoubleSame = () => {
   } else if (groupA.value === "") {
       return alert("Please add a category in 'group A' field, in the 'Different category' subsection.");
   } else if (groupB.value === "") {
-      return alert("Please add a category in group B.");
+      return alert("Please add a category in 'group B' field, in the 'Different category' subsection.");
   } else {
       document.editor.textbox.value+="\n" + variable.value + ".loc[(" + variable.value + "[" + columnA.value + "'] == '" + groupA.value + "') " + selectionGrouping.value +  " (" + variable.value + "['" + columnA.value + "'] == '" + groupB.value + "')].shape[0]";
   }
@@ -460,7 +460,7 @@ const numberSelectionDoubleDiff = () => {
   } else if (groupA.value === "") {
       return alert("Please add a category in 'group A' field, in the 'Different category' subsection.");
   } else if (groupB.value === "") {
-      return alert("Please add a category in group B.");
+      return alert("Please add a category in 'group B' field, in the 'Different category' subsection.");
   } else {
       document.editor.textbox.value+="\n" + variable.value + ".loc[(" + variable.value + "['" + columnA.value + "'] == '" + groupA.value + "') " + selectionGrouping.value + " (" + variable.value + "['" + columnB.value + "'] == '" + groupB.value + "')].shape[0]";
   }
@@ -476,7 +476,7 @@ const numberSelectionDoubleDiffIsIn = () => {
   } else if (groupA.value === "") {
       return alert("Please add a category in 'group A' field, in the 'Different category' subsection.");
   } else if (groupB.value === "") {
-      return alert("Please add a category in group B.");
+      return alert("Please add a category in 'group B' field, in the 'Different category' subsection.");
   } else {
       document.editor.textbox.value+="\n" + variable.value + ".loc[(" + variable.value + "['" + columnA.value + "'] == '" + groupA.value + "') " + selectionGrouping.value + " (" + variable.value + "['" + columnB.value + "'].isin([" + groupB.value.split(',').map(el => `'${el.replace(' ', '')}'`).join().replaceAll(',', ', ') + "]" + "))].shape[0]";
   }
