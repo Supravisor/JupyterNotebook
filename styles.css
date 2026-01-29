@@ -115,3 +115,7 @@ input {
 input:not([type:"button"]) {
   border-color: black;
 }
+
+#selectionPercentage {
+  width: 50px;
+}
