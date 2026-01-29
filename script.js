@@ -537,3 +537,13 @@ const parseDate = () => {
       document.editor.textbox.value+="\n" + variable.value + "['" + dateColumn.value + "'] =  pd.to_datetime(" + variable.value + "['" + dateColumn.value + "'])";
   }
 }
+
+const lineDate = () => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section.");
+  } else if (dateColumn.value === '') {
+      return alert("Please enter a date in the 'date column' field, in the 'Date' section.");
+  } else {
+      document.editor.textbox.value+="\n" + variable.value + "['" + dateColumn.value + "'].value_counts().plot(kind='line', figsize=(14,6))";
+  }
+}
