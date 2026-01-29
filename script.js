@@ -217,7 +217,7 @@ const boxPlotGrouped = () => {
   } else if (boxPlotCategory.value === '') {
       return alert("Please enter a category in the 'category' field, in the 'Correlation between columns' section.");
   } else if (boxPlotCategoryValue.value === '') {
-      return alert("Please enter a category value in the 'value' field to the right.");
+      return alert("Please enter a category value in the 'value' field, in the 'Correlation between columns' section.");
   } else if (boxPlotCategoryColumnA.value === '') {
       return alert("Please enter a category in the 'column A' field, in the 'Correlation between columns' section.");
   } else if (boxPlotCategoryColumnB.value === '') {
