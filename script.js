@@ -170,9 +170,9 @@ const scatters = (stat) => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (scatterX.value === "") {
-      return alert("Please enter a value in the 'scatter x' field.");
+      return alert("Please enter a value in the 'scatter x' field, in the 'Correlation between columns' section.");
   } else if (scatterY.value === "") {
-      return alert("Please enter a value in the 'scatter y' field.");
+      return alert("Please enter a value in the 'scatter y' field, in the 'Correlation between columns' section.");
   } else {
       return document.editor.textbox.value+='\n' + document.editor.variable.value + '.plot(kind=\'' + stat + '\', x=\'' + document.editor.scatterX.value + '\', y=\'' + document.editor.scatterY.value + '\', figsize=(6,6))';
   }
