@@ -302,6 +302,8 @@ const columnWrangleModify = (stat) => {
 }
 
 // Selection and indexing
+let selectionGrouping = document.getElementById("selectionGrouping");
+
 const individualSelection = () => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section.");
