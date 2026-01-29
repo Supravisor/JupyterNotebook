@@ -97,7 +97,7 @@ const categoricalValueCounts = (stat) => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (column.value === "") {
-      return alert("Please add a column name.");
+      return alert("Please add a column name in the 'column' field, in the 'Numerical analysis and visualisation' section.");
   } else {
      let head = mostValueCounts.value;
      if (head) {
@@ -112,7 +112,7 @@ const categoricalBar = (stat) => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (column.value === "") {
-      return alert("Please add a column name.");
+      return alert("Please add a column name in the 'column' field, in the 'Numerical analysis and visualisation' section.");
   } else {
      let head = mostValueCounts.value;
      if (head) {
@@ -127,7 +127,7 @@ const categoricalPie = (stat) => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (column.value === "") {
-      return alert("Please add a column name.");
+      return alert("Please add a column name in the 'column' field, in the 'Numerical analysis and visualisation' section.");
   } else {
      let head = mostValueCounts.value;
      if (head) {
