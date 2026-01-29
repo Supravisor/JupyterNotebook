@@ -136,11 +136,11 @@
 </p>
 
 <p>
-  <input type="button" class="btn btn-primary" value="corr" onclick="document.editor.textbox.value+=document.editor.variable.value === '' ? alert('Please enter a variable name in the \'Load data\' section.') || '' : document.editor.correlation.value === '' ? '\n' + document.editor.variable.value + '.' + this.value + '()' : '\n' + document.editor.correlation.value + ' = ' + document.editor.variable.value + '.' + this.value + '()'" />
-  <input type="button" class="btn btn-primary" value="figure" onclick="document.editor.textbox.value+=document.editor.figure.value === '' ? alert('Please enter a name in the figure field.') || '' : '\n' + document.editor.figure.value + ' = plt.' + this.value + '(figsize=(8,8))'" />
+  <input type="button" class="btn btn-primary" value="corr" onclick="document.editor.textbox.value+=document.editor.variable.value === '' ? alert("Please enter a variable name in the 'variable' field, in the 'Load data' section.") || '' : document.editor.correlation.value === '' ? '\n' + document.editor.variable.value + '.' + this.value + '()' : '\n' + document.editor.correlation.value + ' = ' + document.editor.variable.value + '.' + this.value + '()'" />
+  <input type="button" class="btn btn-primary" value="figure" onclick="document.editor.textbox.value+=document.editor.figure.value === '' ? alert("Please enter a name in the 'figure' field, in the 'Correlation between columns' section.") || '' : '\n' + document.editor.figure.value + ' = plt.' + this.value + '(figsize=(8,8))'" />
   <input type="button" class="btn btn-primary" value="matshow" onclick="matshow(this.value)" />
-  <input type="button" class="btn btn-primary" value="x ticks" onclick="document.editor.textbox.value+=document.editor.correlation.value === '' ? alert('Please enter a name in the correlation field.') || '' : '\nplt.' + this.value.replace(' ', '') + '(range(len(' + document.editor.correlation.value + '.columns)), ' + document.editor.correlation.value + '.columns, rotation=\'vertical\')'" />
-  <input type="button" class="btn btn-primary" value="y ticks" onclick="document.editor.textbox.value+=document.editor.correlation.value === '' ? alert('Please enter a name in the correlation field.') || '' : '\nplt.' + this.value.replace(' ', '') + '(range(len(' + document.editor.correlation.value + '.columns)), ' + document.editor.correlation.value + '.columns)'" />
+  <input type="button" class="btn btn-primary" value="x ticks" onclick="document.editor.textbox.value+=document.editor.correlation.value === '' ? alert("Please enter a name in the 'figure' field, in the 'Correlation between columns' section.") || '' : '\nplt.' + this.value.replace(' ', '') + '(range(len(' + document.editor.correlation.value + '.columns)), ' + document.editor.correlation.value + '.columns, rotation=\'vertical\')'" />
+  <input type="button" class="btn btn-primary" value="y ticks" onclick="document.editor.textbox.value+=document.editor.correlation.value === '' ? alert("Please enter a name in the 'correlation' field, in the 'Correlation between columns' section.") || '' : '\nplt.' + this.value.replace(' ', '') + '(range(len(' + document.editor.correlation.value + '.columns)), ' + document.editor.correlation.value + '.columns)'" />
 </p>
 
 <p>
@@ -151,7 +151,7 @@
 
 <p>
   <input type="button" class="btn btn-primary" value="box" onclick="box(); analysis=this.value" />
-  <input type="button" class="btn btn-primary" value="boxplot cols" onclick="document.editor.textbox.value+=document.editor.boxplotCats.value === '' ? alert('Please enter some comma separated categories.') || '' : '\n' + this.value.replace(' ', '_') + ' = [' + document.editor.boxplotCats.value.split(',').map(el => `'${el.replace(' ', '')}'`).join().replaceAll(',', ', ') + ']'; document.editor.boxplotCats.value=''; analysis=this.value" />
+  <input type="button" class="btn btn-primary" value="boxplot cols" onclick="document.editor.textbox.value+=document.editor.boxplotCats.value === '' ? alert("Please enter some comma separated categories in the 'boxplot categories' field, in the 'Correlation between columns' section.") || '' : '\n' + this.value.replace(' ', '_') + ' = [' + document.editor.boxplotCats.value.split(',').map(el => `'${el.replace(' ', '')}'`).join().replaceAll(',', ', ') + ']'; document.editor.boxplotCats.value=''; analysis=this.value" />
   <input class="btn" name="boxplotCats" id="plots" placeholder="boxplot catergories" size="12" type="textfield" />
 </p>
 
