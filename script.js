@@ -158,9 +158,9 @@ let groupB = document.getElementById("groupB");
 
 const matshow = (stat) => {
   if (correlation.value === "") {
-    return alert('Please enter a name in the correlation field.');
+    return alert("Please enter a name in the 'correlation field', in the 'Correlation between columns' section.");
   } else if (figure.value === "") {
-      return alert('Please enter a name in the figure field.');
+      return alert("Please enter a name in the 'figure' field, in the 'Correlation between columns' section.');
   } else {
       document.editor.textbox.value+='\nplt.' + stat + '(' + document.editor.correlation.value + ', cmap=\'RdBu\', fignum=' + document.editor.figure.value + '.number)'
   }
@@ -253,7 +253,7 @@ const columnPlot = (stat) => {
 
 const columnScatter = (stat) => {
   if (variable.value === '') {
-    return alert('Please enter a variable name in the \'Load data\' section');
+    return alert("Please enter a variable name in the 'Load data' section");
   } else if (columnA.value === "") {
       return alert("Please add a primary column name in the 'Column Wrangling' section.");
   } else if (scatterAxis.value === "") {
