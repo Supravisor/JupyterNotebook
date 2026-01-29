@@ -382,7 +382,7 @@ const percentageSelection = () => {
   } else if (newColumn.value === "") {
       return alert("Please add a column name in the 'new column' field in the 'Column Wrangling' section.");
   } else if (selectionPercentage.value === "") {
-      return alert("Please select a percentage.");
+      return alert("Please add a percentage in the 'percentage' field, in the 'Mean' subsection.");
   } else {
       let percentage = selectionPercentage.value;
       let percentageNegative = false;
@@ -438,8 +438,6 @@ const valueCountSelection = () => {
       return alert("Please add a category in 'group A' field, in the 'Different category' subsection.");
   } else if (newColumn.value === "") {
       return alert("Please add a column name in the 'new column' field in the 'Column Wrangling' section.");
-  } else if (selectionPercentage.value === "") {
-      return alert("Please select a percentage.");
   } else {
       document.editor.textbox.value+="\n" + variable.value + ".loc[" + variable.value + "['" + columnA.value + "'] == '" + groupA.value + "', '" + newColumn.value + "'].value_counts()";
   }
