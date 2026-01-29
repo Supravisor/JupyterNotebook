@@ -233,7 +233,7 @@ const columnWrangle = (stat) => {
   } else if (newColumn.value === "") {
       return alert("Please add a column name in the 'new column' field in the 'Column Wrangling' section.");
   } else if (columnA.value === "") {
-      return alert("Please add a primary column name in the 'Column Wrangling' section.");
+      return alert("Please add a primary column name in the 'primary column' field, in the 'Column Wrangling' section.");
   } else if (columnB.value === "") {
       return alert("Please add a secondary column name in the 'Column Wrangling' section.");
   } else {
@@ -255,7 +255,7 @@ const columnScatter = (stat) => {
   if (variable.value === '') {
     return alert("Please enter a variable name in the 'Load data' section");
   } else if (columnA.value === "") {
-      return alert("Please add a primary column name in the 'Column Wrangling' section.");
+      return alert("Please add a primary column name in the 'primary column' field, in the 'Column Wrangling' section.");
   } else if (scatterAxis.value === "") {
       return alert("Please add a scatter column name in the 'scatter' field, in the 'Add and calculate a new column' section.");
   } else {
@@ -270,7 +270,7 @@ const columnWrangleModify = (stat) => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section.");
   } else if (columnA.value === "") {
-      return alert("Please add a primary column name in the 'Column Wrangling' section.");
+      return alert("Please add a primary column name in the 'primary column' field, in the 'Column Wrangling' section.");
   } else if (modify.value === "") {
       return alert("Please add a value in the 'modify' field, in the 'Modify existing column' section.");
   } else if (!Number(modify.value) && Number(modify.value) != "0") {
@@ -285,7 +285,7 @@ const individualSelection = () => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section.");
   } else if (columnA.value === "") {
-      return alert("Please add a primary column name in the 'Column Wrangling' section.");
+      return alert("Please add a primary column name in the 'primary column' field, in the 'Column Wrangling' section.");
   } else if (columnB.value === "") {
       return alert("Please add a secondary column name in the 'Column Wrangling' section.");
   } else {
@@ -297,7 +297,7 @@ const groupSelectionMean = () => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section.");
   } else if (columnA.value === "") {
-      return alert("Please add a primary column name in the 'Column Wrangling' section.");
+      return alert("Please add a primary column name in the 'primary column' field, in the 'Column Wrangling' section.");
   } else if (groupA.value === "") {
       return alert("Please add a category in group A.");
   } else if (groupB.value === "") {
@@ -311,7 +311,7 @@ const meanSelection = () => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section.");
   } else if (columnA.value === "") {
-      return alert("Please add a primary column name in the 'Column Wrangling' section.");
+      return alert("Please add a primary column name in the 'primary column' field, in the 'Column Wrangling' section.");
   } else if (groupA.value === "") {
       return alert("Please add a category in group A.");
   } else if (columnB.value === "") {
@@ -331,7 +331,7 @@ const meanMaxSelection = () => {
   } else if (mostValueCounts.value === "") {
       return alert("Please add a number in the 'number' field, in the 'Categorical analysis and visualisation' section.");
   } else if (columnA.value === "") {
-      return alert("Please add a primary column name in the 'Column Wrangling' section.");
+      return alert("Please add a primary column name in the 'primary column' field, in the 'Column Wrangling' section.");
   } else if (columnB.value === "") {
       return alert("Please add a secondary column name in the 'Column Wrangling' section.");
   } else {
@@ -355,7 +355,7 @@ const percentageSelection = () => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section.");
   } else if (columnA.value === "") {
-      return alert("Please add a primary column name in the 'Column Wrangling' section.");
+      return alert("Please add a primary column name in the 'primary column' field, in the 'Column Wrangling' section.");
   } else if (groupA.value === "") {
       return alert("Please add a category in group A.");
   } else if (newColumn.value === "") {
@@ -412,7 +412,7 @@ const valueCountSelection = () => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section.");
   } else if (columnA.value === "") {
-      return alert("Please add a primary column name in the 'Column Wrangling' section.");
+      return alert("Please add a primary column name in the 'primary column' field, in the 'Column Wrangling' section.");
   } else if (groupA.value === "") {
       return alert("Please add a category in group A.");
   } else if (newColumn.value === "") {
@@ -428,7 +428,7 @@ const numberSelectionSingle = () => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section.");
   } else if (columnA.value === "") {
-      return alert("Please add a primary column name in the 'Column Wrangling' section.");
+      return alert("Please add a primary column name in the 'primary column' field, in the 'Column Wrangling' section.");
   } else if (groupA.value === "") {
       return alert("Please add a category in group A.");
   } else {
@@ -440,7 +440,7 @@ const numberSelectionDoubleSame = () => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section.");
   } else if (columnA.value === "") {
-      return alert("Please add a primary column name in the 'Column Wrangling' section.");
+      return alert("Please add a primary column name in the 'primary column' field, in the 'Column Wrangling' section.");
   } else if (groupA.value === "") {
       return alert("Please add a category in group A.");
   } else if (groupB.value === "") {
@@ -454,7 +454,7 @@ const numberSelectionDoubleDiff = () => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section.");
   } else if (columnA.value === "") {
-      return alert("Please add a primary column name in the 'Column Wrangling' section.");
+      return alert("Please add a primary column name in the 'primary column' field, in the 'Column Wrangling' section.");
   } else if (columnB.value === "") {
       return alert("Please add a secondary column name in the 'Column Wrangling' section.");
   } else if (groupA.value === "") {
@@ -470,7 +470,7 @@ const numberSelectionDoubleDiffIsIn = () => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section.");
   } else if (columnA.value === "") {
-      return alert("Please add a primary column name in the 'Column Wrangling' section.");
+      return alert("Please add a primary column name in the 'primary column' field, in the 'Column Wrangling' section.");
   } else if (columnB.value === "") {
       return alert("Please add a secondary column name in the 'Column Wrangling' section.");
   } else if (groupA.value === "") {
