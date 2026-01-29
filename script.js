@@ -194,7 +194,7 @@ const boxPlotGrouped = () => {
   if (variable.value === '') {
     return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (boxPlotCategory.value === '') {
-      return alert("Please enter a category in the 'category' field to the right.");
+      return alert("Please enter a category in the 'category' field, in the 'Correlation between columns' section.");
   } else if (boxPlotCategoryValue.value === '') {
       return alert("Please enter a category value in the 'value' field to the right.");
   } else if (boxPlotCategoryColumnA.value === '') {
