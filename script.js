@@ -525,3 +525,13 @@ const dateDiff = () => {
       document.editor.textbox.value+="\n" + variable.value + "['" + dateNewColumn.value + "'] = " + variable.value + "[[" + dateColumn.value.split(',').map(el => `'${el.replace(' ', '')}'`) + "]].apply(lambda x: (x[1] - x[0]).days, axis=1)";
   }
 }
+
+const parseDate = () => {
+  if (variable.value === "") {
+    return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section.");
+  } else if (dateColumn.value === "") {
+      return alert("Please enter a date in the 'date column' field, in the 'Date' section.");
+  } else {
+      document.editor.textbox.value+="\n" + variable.value + "['" + dateColumn.value + "'] =  pd.to_datetime(" + variable.value + "['" + dateColumn.value + "'])";
+  }
+}
