@@ -257,7 +257,7 @@ const columnScatter = (stat) => {
   } else if (columnA.value === "") {
       return alert("Please add a primary column name in the 'Column Wrangling' section.");
   } else if (scatterAxis.value === "") {
-      return alert("Please add a scatter column name.");
+      return alert("Please add a scatter column name in the 'scatter' field, in the 'Add and calculate a new column' section.");
   } else {
       document.editor.textbox.value+="\n" + variable.value + ".plot(kind='" + stat + "', x='" + columnA.value + "', y='" + scatterAxis.value + "', figsize=(6,6))";
   }
