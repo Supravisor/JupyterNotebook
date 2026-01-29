@@ -181,7 +181,7 @@ const matshow = (stat) => {
   if (correlation.value === "") {
     return alert("Please enter a name in the 'correlation field', in the 'Correlation between columns' section.");
   } else if (figure.value === "") {
-      return alert("Please enter a name in the 'figure' field, in the 'Correlation between columns' section.');
+      return alert("Please enter a name in the 'figure' field, in the 'Correlation between columns' section.");
   } else {
       document.editor.textbox.value+="\nplt." + stat + "(" + document.editor.correlation.value + ", cmap='RdBu', fignum=" + document.editor.figure.value + ".number)";
   }
