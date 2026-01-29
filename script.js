@@ -29,7 +29,7 @@ const meanMedian = (stat) => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (column.value === "") {
-      return alert("Please add a column name in the 'Numerical analysis and visualisation' section.");
+      return alert("Please add a column name in the 'column' field, in the 'Numerical analysis and visualisation' section.");
   } else {
       document.editor.textbox.value+= "\n" + variable.value + "['" + column.value + "']." + stat + "()";
   }
@@ -39,7 +39,7 @@ const analyseBox = (stat) => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (column.value === "") {
-      return alert("Please add a column name in the 'Numerical analysis and visualisation' section.");
+      return alert("Please add a column name in the 'column' field, in the 'Numerical analysis and visualisation' section.");
   } else if (axis.value !== "") {
       document.editor.textbox.value+= "\n" + axis.value + " = " + variable.value + "['" + column.value + "'].plot(kind='" + stat + "', vert=False, figsize=(14,6))";
   } else {
@@ -51,7 +51,7 @@ const densityHist = (stat) => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (column.value === "") {
-      return alert("Please add a column name in the 'Numerical analysis and visualisation' section.");
+      return alert("Please add a column name in the 'column' field, in the 'Numerical analysis and visualisation' section.");
   } else if (axis.value !== "") {
       document.editor.textbox.value+= "\n" + axis.value + " = " + variable.value + "['" + column.value + "'].plot(kind='" + stat + "', figsize=(14,6))";
   } else {
@@ -65,7 +65,7 @@ const colour = () => {
   } else if (analysis === undefined) {
       return alert("Please select an analysis type.");
   } else if (column.value === "") {
-      return alert("Please add a column name in the 'Numerical analysis and visualisation' section.");
+      return alert("Please add a column name in the 'column' field, in the 'Numerical analysis and visualisation' section.");
   } else if (axis.value === "") {
       return alert("Please add an axis name in the 'Numerical analysis and visualisation' section.");
   } else {
