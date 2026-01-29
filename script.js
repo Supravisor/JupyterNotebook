@@ -69,7 +69,7 @@ const colour = () => {
   } else if (axis.value === "") {
       return alert("Please enter an axis name in the 'axis' field, in the 'Numerical analysis and visualisation' section.");
   } else {
-      document.editor.textbox.value+='\n' + document.editor.axis.value + '.axvline(' + document.editor.variable.value + '[\'' + document.editor.column.value + '\'].' + analysis + '(), color=\'' + document.editor.colours.value + '\')'
+      document.editor.textbox.value+="\n" + document.editor.axis.value + ".axvline(" + document.editor.variable.value + "['" + document.editor.column.value + "']." + analysis + "(), color='" + document.editor.colours.value + "')";
   }
 }
 
@@ -101,9 +101,9 @@ const categoricalValueCounts = (stat) => {
   } else {
      let head = mostValueCounts.value;
      if (head) {
-      document.editor.textbox.value+='\n' + variable.value + '[\'' + column.value + '\'].' + stat.replace(' ', '_') + '().head(' + head + ')';
+      document.editor.textbox.value+="\n" + variable.value + "['" + column.value + "']." + stat.replace(' ', '_') + "().head(" + head + ")";
      } else {
-        document.editor.textbox.value+='\n' + variable.value + '[\'' + column.value + '\'].' + stat.replace(' ', '_') + '()'
+        document.editor.textbox.value+="\n" + variable.value + "['" + column.value + "']." + stat.replace(' ', '_') + "()";
      }
   }
 }
@@ -116,9 +116,9 @@ const categoricalBar = (stat) => {
   } else {
      let head = mostValueCounts.value;
      if (head) {
-      document.editor.textbox.value+='\n' + variable.value + '[\'' + column.value + '\'].value_counts().head(' + head + ').plot(kind=\'' + stat + '\', figsize=(14,6))';
+      document.editor.textbox.value+="\n" + variable.value + "['" + column.value + "'].value_counts().head(" + head + ").plot(kind='" + stat + "', figsize=(14,6))";
      } else {
-      document.editor.textbox.value+='\n' + variable.value + '[\'' + column.value + '\'].value_counts().plot(kind=\'' + stat + '\', figsize=(14,6))';
+      document.editor.textbox.value+="\n" + variable.value + "['" + column.value + "'].value_counts().plot(kind='" + stat + "', figsize=(14,6))";
      }
   }
 }
@@ -131,9 +131,9 @@ const categoricalPie = (stat) => {
   } else {
      let head = mostValueCounts.value;
      if (head) {
-      document.editor.textbox.value+='\n' + variable.value + '[\'' + column.value + '\'].value_counts().head(' + head + ').plot(kind=\'' + stat + '\', figsize=(6,6))';
+      document.editor.textbox.value+="\n" + variable.value + "['" + column.value + "'].value_counts().head(" + head + ").plot(kind='" + stat + "', figsize=(6,6))";
      } else {
-        document.editor.textbox.value+='\n' + variable.value + '[\'' + column.value + '\'].value_counts().plot(kind=\'' + stat + '\', figsize=(6,6))';
+        document.editor.textbox.value+="\n" + variable.value + "['" + column.value + "'].value_counts().plot(kind='" + stat + "', figsize=(6,6))";
      }
   }
 }
@@ -162,7 +162,7 @@ const matshow = (stat) => {
   } else if (figure.value === "") {
       return alert("Please enter a name in the 'figure' field, in the 'Correlation between columns' section.');
   } else {
-      document.editor.textbox.value+='\nplt.' + stat + '(' + document.editor.correlation.value + ', cmap=\'RdBu\', fignum=' + document.editor.figure.value + '.number)'
+      document.editor.textbox.value+="\nplt." + stat + "(" + document.editor.correlation.value + ", cmap='RdBu', fignum=" + document.editor.figure.value + ".number)";
   }
 }
 
@@ -174,7 +174,7 @@ const scatters = (stat) => {
   } else if (scatterY.value === "") {
       return alert("Please enter a value in the 'scatter y' field, in the 'Correlation between columns' section.");
   } else {
-      return document.editor.textbox.value+='\n' + document.editor.variable.value + '.plot(kind=\'' + stat + '\', x=\'' + document.editor.scatterX.value + '\', y=\'' + document.editor.scatterY.value + '\', figsize=(6,6))';
+      return document.editor.textbox.value+="\n" + document.editor.variable.value + ".plot(kind='" + stat + "', x='" + document.editor.scatterX.value + "', y='" + document.editor.scatterY.value + "', figsize=(6,6))";
   }
 }
 
@@ -182,11 +182,11 @@ const boxPlot = () => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (plots.value === "") {
-      return alert("Please enter at least one category into the 'boxplot categories' field.");
+      return alert("Please enter at least one category into the 'boxplot categories' field, in the 'Correlation between columns' section.");
   } else if (boxPlotAxis.value === "") {
       return alert("Please enter a name in the 'boxplot axis' field.");
   } else {
-      return document.editor.textbox.value+= '\n' + boxPlotAxis.value + ' = ' + document.editor.variable.value + '[[' + document.editor.boxplotCats.value.split(',').map(el => `'${el.replace(' ', '')}'`).join().replaceAll(',', ', ') + ']].boxplot(by=\'' + document.editor.boxplotCats.value.split(',')[document.editor.boxplotCats.value.split(',').length - 1].replace(' ', '') + '\', figsize=(14,6))\n' + boxPlotAxis.value + '.set_ylabel(\'' + document.editor.boxplotCats.value.split(',')[0] + '\')';
+      return document.editor.textbox.value+="\n" + boxPlotAxis.value + " = " + document.editor.variable.value + "[[" + document.editor.boxplotCats.value.split(',').map(el => `'${el.replace(' ', '')}'`).join().replaceAll(',', ', ') + "]].boxplot(by='" + document.editor.boxplotCats.value.split(',')[document.editor.boxplotCats.value.split(',').length - 1].replace(' ', '') + "', figsize=(14,6))\n" + boxPlotAxis.value + ".set_ylabel('" + document.editor.boxplotCats.value.split(',')[0] + "')";
   }
 }
 
@@ -212,9 +212,9 @@ const box = () => {
   if (variable.value === "") {
     return alert("Please enter a variable name in the 'variable' field, in the 'Load data' section");
   } else if (plots.value === "") {
-      return alert("Please enter at least one category into the 'boxplot categories' field.");
+      return alert("Please enter at least one category into the 'boxplot categories' field, in the 'Correlation between columns' section.");
   } else {
-      return document.editor.textbox.value+= '\n' + document.editor.variable.value + '[[' + document.editor.boxplotCats.value.split(',').map(el => `'${el.replace(' ', '')}'`) + ']].plot(kind=\'box\', subplots=True, layout=(2,3), figsize=(14,8))';
+      return document.editor.textbox.value+="\n" + document.editor.variable.value + "[[" + document.editor.boxplotCats.value.split(',').map(el => `'${el.replace(' ', '')}'`) + "]].plot(kind='box', subplots=True, layout=(2,3), figsize=(14,8))";
   }
 }
 
@@ -237,7 +237,7 @@ const columnWrangle = (stat) => {
   } else if (columnB.value === "") {
       return alert("Please add a secondary column name in the 'Column Wrangling' section.");
   } else {
-      document.editor.textbox.value+='\n' + variable.value + '[\'' + newColumn.value + '\'] = ' + variable.value + '[\'' + columnA.value + '\'] ' + stat + ' ' + variable.value + '[\'' + columnB.value + '\']\n' + variable.value + '[\'' + newColumn.value + '\'].head()' + '\n' + variable.value + '[\'' + newColumn.value + '\'].plot(kind=\'hist\',' + bin + ' figsize=(14,6))';
+      document.editor.textbox.value+="\n" + variable.value + "['" + newColumn.value + "'] = " + variable.value + "['" + columnA.value + "'] " + stat + " " + variable.value + "['" + columnB.value + "']\n" + variable.value + "['" + newColumn.value + "'].head()" + "\n" + variable.value + "['" + newColumn.value + "'].plot(kind='hist'," + bin + " figsize=(14,6))";
   }
 }
 
@@ -247,7 +247,7 @@ const columnPlot = (stat) => {
   } else if (newColumn.value === "") {
       return alert("Please add a column name in the 'new column' field in the 'Column Wrangling' section.");
   } else {
-      document.editor.textbox.value+='\n' + variable.value + '[\'' + newColumn.value + '\'].plot(kind=\'' + stat + '\', figsize=(14,6))';
+      document.editor.textbox.value+="\n" + variable.value + "['" + newColumn.value + "'].plot(kind='" + stat + "', figsize=(14,6))";
   }
 }
 
@@ -259,7 +259,7 @@ const columnScatter = (stat) => {
   } else if (scatterAxis.value === "") {
       return alert("Please add a scatter column name.");
   } else {
-      document.editor.textbox.value+='\n' + variable.value + '.plot(kind=\'' + stat + '\', x=\'' + columnA.value + '\', y=\'' + scatterAxis.value + '\', figsize=(6,6))';
+      document.editor.textbox.value+="\n" + variable.value + ".plot(kind='" + stat + "', x='" + columnA.value + "', y='" + scatterAxis.value + "', figsize=(6,6))";
   }
 }
 
@@ -276,7 +276,7 @@ const columnWrangleModify = (stat) => {
   } else if (!Number(modify.value) && Number(modify.value) != "0") {
       return alert("Please add a valid number in the modify field to the right.");
   } else {
-      document.editor.textbox.value+='\n' + variable.value + '[\'' + columnA.value + '\'] ' + stat + '= ' + modify.value + '\n' + variable.value + '[\'' + columnA.value + '\'].head()';
+      document.editor.textbox.value+="\n" + variable.value + "['" + columnA.value + "'] " + stat + "= " + modify.value + "\n" + variable.value + "['" + columnA.value + "'].head()";
   }
 }
 
@@ -303,7 +303,7 @@ const groupSelectionMean = () => {
   } else if (groupB.value === "") {
       return alert("Please add a category in group B.");
   } else {
-      document.editor.textbox.value+='\n' + variable.value + '.loc[' + variable.value + '[\'' + columnA.value + '\'] == \'' + groupA.value + '\', \'' + groupB.value + '\'].mean()';
+      document.editor.textbox.value+="\n" + variable.value + ".loc[" + variable.value + "['" + columnA.value + "'] == '" + groupA.value + "', '" + groupB.value + "'].mean()";
   }
 }
 
