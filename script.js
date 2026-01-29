@@ -500,3 +500,6 @@ const numberSelectionDoubleDiffIsIn = () => {
       document.editor.textbox.value+="\n" + variable.value + ".loc[(" + variable.value + "['" + columnA.value + "'] == '" + groupA.value + "') " + selectionGrouping.value + " (" + variable.value + "['" + columnB.value + "'].isin([" + groupB.value.split(',').map(el => `'${el.replace(' ', '')}'`).join().replaceAll(',', ', ') + "]" + "))].shape[0]";
   }
 }
+
+// Dates
+let dateColumn = document.getElementById("dateColumn");
