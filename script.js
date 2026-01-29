@@ -235,7 +235,7 @@ const columnWrangle = (stat) => {
   } else if (columnA.value === "") {
       return alert("Please add a primary column name in the 'primary column' field, in the 'Column Wrangling' section.");
   } else if (columnB.value === "") {
-      return alert("Please add a secondary column name in the 'Column Wrangling' section.");
+      return alert("Please add a secondary column name in the 'secondary column' field, in the 'Column Wrangling' section.");
   } else {
       document.editor.textbox.value+="\n" + variable.value + "['" + newColumn.value + "'] = " + variable.value + "['" + columnA.value + "'] " + stat + " " + variable.value + "['" + columnB.value + "']\n" + variable.value + "['" + newColumn.value + "'].head()" + "\n" + variable.value + "['" + newColumn.value + "'].plot(kind='hist'," + bin + " figsize=(14,6))";
   }
@@ -287,7 +287,7 @@ const individualSelection = () => {
   } else if (columnA.value === "") {
       return alert("Please add a primary column name in the 'primary column' field, in the 'Column Wrangling' section.");
   } else if (columnB.value === "") {
-      return alert("Please add a secondary column name in the 'Column Wrangling' section.");
+      return alert("Please add a secondary column name in the 'secondary column' field, in the 'Column Wrangling' section.");
   } else {
       document.editor.textbox.value+="\n" + variable.value + ".loc[" + variable.value + "['" + columnA.value + "'] == '" + columnB.value + "']" + "\n" + variable.value + "['" + columnA.value + "'].head()";
   }
@@ -315,7 +315,7 @@ const meanSelection = () => {
   } else if (groupA.value === "") {
       return alert("Please add a category in group A.");
   } else if (columnB.value === "") {
-      return alert("Please add a secondary column name in the 'Column Wrangling' section.");
+      return alert("Please add a secondary column name in the 'secondary column' field, in the 'Column Wrangling' section.");
   } else if (groupB.value === "") {
       return alert("Please add a category in group B.");
   } else if (newColumn.value === "") {
@@ -333,7 +333,7 @@ const meanMaxSelection = () => {
   } else if (columnA.value === "") {
       return alert("Please add a primary column name in the 'primary column' field, in the 'Column Wrangling' section.");
   } else if (columnB.value === "") {
-      return alert("Please add a secondary column name in the 'Column Wrangling' section.");
+      return alert("Please add a secondary column name in the 'secondary column' field, in the 'Column Wrangling' section.");
   } else {
       document.editor.textbox.value+="\n" + variable.value + ".loc[" + variable.value + "['"   + columnA.value + "'] > " + mostValueCounts.value + ", '"   + columnB.value + "'].mean()";
   }
@@ -345,7 +345,7 @@ const meanMinSelection = () => {
   } else if (mostValueCounts.value === "") {
       return alert("Please add a number in the 'number' field, in the 'Categorical analysis and visualisation' section.");
   } else if (columnB.value === "") {
-      return alert("Please add a secondary column name in the 'Column Wrangling' section.");
+      return alert("Please add a secondary column name in the 'secondary column' field, in the 'Column Wrangling' section.");
   } else {
       document.editor.textbox.value+="\n" + variable.value + ".loc[" + variable.value + "['"   + columnA.value + "'] < " + mostValueCounts.value + ", '"   + columnB.value + "'].mean()";
   }
@@ -456,7 +456,7 @@ const numberSelectionDoubleDiff = () => {
   } else if (columnA.value === "") {
       return alert("Please add a primary column name in the 'primary column' field, in the 'Column Wrangling' section.");
   } else if (columnB.value === "") {
-      return alert("Please add a secondary column name in the 'Column Wrangling' section.");
+      return alert("Please add a secondary column name in the 'secondary column' field, in the 'Column Wrangling' section.");
   } else if (groupA.value === "") {
       return alert("Please add a category in group A.");
   } else if (groupB.value === "") {
@@ -472,7 +472,7 @@ const numberSelectionDoubleDiffIsIn = () => {
   } else if (columnA.value === "") {
       return alert("Please add a primary column name in the 'primary column' field, in the 'Column Wrangling' section.");
   } else if (columnB.value === "") {
-      return alert("Please add a secondary column name in the 'Column Wrangling' section.");
+      return alert("Please add a secondary column name in the 'secondary column' field, in the 'Column Wrangling' section.");
   } else if (groupA.value === "") {
       return alert("Please add a category in group A.");
   } else if (groupB.value === "") {
