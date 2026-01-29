@@ -299,7 +299,7 @@ const groupSelectionMean = () => {
   } else if (columnA.value === "") {
       return alert("Please add a primary column name in the 'primary column' field, in the 'Column Wrangling' section.");
   } else if (groupA.value === "") {
-      return alert("Please add a category in group A.");
+      return alert("Please add a category in 'group A' field, in the 'Different category' subsection.");
   } else if (groupB.value === "") {
       return alert("Please add a category in group B.");
   } else {
@@ -313,7 +313,7 @@ const meanSelection = () => {
   } else if (columnA.value === "") {
       return alert("Please add a primary column name in the 'primary column' field, in the 'Column Wrangling' section.");
   } else if (groupA.value === "") {
-      return alert("Please add a category in group A.");
+      return alert("Please add a category in 'group A' field, in the 'Different category' subsection.");
   } else if (columnB.value === "") {
       return alert("Please add a secondary column name in the 'secondary column' field, in the 'Column Wrangling' section.");
   } else if (groupB.value === "") {
@@ -357,7 +357,7 @@ const percentageSelection = () => {
   } else if (columnA.value === "") {
       return alert("Please add a primary column name in the 'primary column' field, in the 'Column Wrangling' section.");
   } else if (groupA.value === "") {
-      return alert("Please add a category in group A.");
+      return alert("Please add a category in 'group A' field, in the 'Different category' subsection.");
   } else if (newColumn.value === "") {
       return alert("Please add a column name in the 'new column' field in the 'Column Wrangling' section.");
   } else if (selectionPercentage.value === "") {
@@ -414,7 +414,7 @@ const valueCountSelection = () => {
   } else if (columnA.value === "") {
       return alert("Please add a primary column name in the 'primary column' field, in the 'Column Wrangling' section.");
   } else if (groupA.value === "") {
-      return alert("Please add a category in group A.");
+      return alert("Please add a category in 'group A' field, in the 'Different category' subsection.");
   } else if (newColumn.value === "") {
       return alert("Please add a column name in the 'new column' field in the 'Column Wrangling' section.");
   } else if (selectionPercentage.value === "") {
@@ -430,7 +430,7 @@ const numberSelectionSingle = () => {
   } else if (columnA.value === "") {
       return alert("Please add a primary column name in the 'primary column' field, in the 'Column Wrangling' section.");
   } else if (groupA.value === "") {
-      return alert("Please add a category in group A.");
+      return alert("Please add a category in 'group A' field, in the 'Different category' subsection.");
   } else {
       document.editor.textbox.value+="\n" + variable.value + ".loc[(" + variable.value + "['" + columnA.value + "'] == '" + groupA.value + "')].shape[0]";
   }
@@ -442,7 +442,7 @@ const numberSelectionDoubleSame = () => {
   } else if (columnA.value === "") {
       return alert("Please add a primary column name in the 'primary column' field, in the 'Column Wrangling' section.");
   } else if (groupA.value === "") {
-      return alert("Please add a category in group A.");
+      return alert("Please add a category in 'group A' field, in the 'Different category' subsection.");
   } else if (groupB.value === "") {
       return alert("Please add a category in group B.");
   } else {
@@ -458,7 +458,7 @@ const numberSelectionDoubleDiff = () => {
   } else if (columnB.value === "") {
       return alert("Please add a secondary column name in the 'secondary column' field, in the 'Column Wrangling' section.");
   } else if (groupA.value === "") {
-      return alert("Please add a category in group A.");
+      return alert("Please add a category in 'group A' field, in the 'Different category' subsection.");
   } else if (groupB.value === "") {
       return alert("Please add a category in group B.");
   } else {
@@ -474,7 +474,7 @@ const numberSelectionDoubleDiffIsIn = () => {
   } else if (columnB.value === "") {
       return alert("Please add a secondary column name in the 'secondary column' field, in the 'Column Wrangling' section.");
   } else if (groupA.value === "") {
-      return alert("Please add a category in group A.");
+      return alert("Please add a category in 'group A' field, in the 'Different category' subsection.");
   } else if (groupB.value === "") {
       return alert("Please add a category in group B.");
   } else {
